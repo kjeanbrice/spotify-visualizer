@@ -24,3 +24,7 @@ body {
 body {
     background-color: #212121;
 }
+
+.dropdown-toggle::after{
+    content:none !important;
+}

@@ -1,17 +1,34 @@
 <div class="hero-background">
         <div class="container-fluid">
-                <nav class="navbar navbar-dark navbar-transparent navbar-hero">
+                <nav class="navbar navbar-expand navbar-dark navbar-transparent navbar-hero">
                         <a class="navbar-left navbar-brandcolor" href="#">
                                 <img src="../../../assets/images/logo.png" class="avatar-brand" alt="">
                                 <span class="brand-title">Spotify Profile</span>
                         </a>
 
-                        <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                        <a href="javascript:void(0);"><img class="avatar"
-                                                        src="./assets/images/herobutton.svg" /></a>
-                                </li>
-                        </ul>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse">
+                                <ul class="navbar-nav ml-auto">
+                                
+
+                                        <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        <img class="avatar"
+                                                                        src="./assets/images/herobutton.svg" />
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right menu-text-size" aria-labelledby="navbarDropdownMenuLink">
+                                                          <a class="dropdown-item" href="#">Login</a>
+                                                          <a class="dropdown-item" href="#">Need Help?</a>
+                                                        </div>
+                                        </li>
+
+
+                                </ul>
+                        </div>
                 </nav>
         </div>
 
@@ -19,11 +36,12 @@
                 <div class="row hero-section">
                         <div class="col-lg-6 col-md-6">
                                 <h1>Take control of your spotify profile!</h1>
-                                <h2> Use it when you need it! This application helps you visualize and manage your personalized Spotify data. 
+                                <h2> Use it when you need it! This application helps you visualize and manage your
+                                        personalized Spotify account.
                                         View your top artists, top tracks, recently played tracks and more!</h2>
                                 <div class="hero-login-area">
-                                        <button type="button" class="btn btn-lg dark-green"
-                                                routerLink="/login"><span class="button-text-size">Login</span></button>
+                                        <button type="button" class="btn btn-lg dark-green" routerLink="/login"><span
+                                                        class="button-text-size">Login</span></button>
                                 </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
@@ -32,3 +50,14 @@
                 </div>
         </div>
 </div>
+
+
+<footer class="footer-section">
+        <p>&copy; 2019 Spotify Profile</p>
+        <div class="footerpages">
+                <a href="#">Home</a>
+                <a href="#">Resources</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+        </div>
+</footer>
