@@ -15,6 +15,15 @@ body{
     
 }
 
+.icon-size-md{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.dropdown-item{
+    font-weight: 500;
+}
+
 .menu-text-size{
     font-size: 1.2rem;
     font-weight: 600;
@@ -23,8 +32,8 @@ body{
 
 .dark-green{
     color: white;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 28%;
+    padding-right: 28%;
     background-color: #1db954 !important;
     border-color: #1db954!important;
     -webkit-transition: background-color .5s ease-in-out, border-color .5s ease-in-out;
@@ -93,6 +102,7 @@ nav a {
         /*background-position: bottom right;*/
 }
 
+
 .hero-section h1 {
     color: rgb(230, 241, 255);
     font-weight: 300;
@@ -115,7 +125,7 @@ div.landing-text h2{
 .hero-section, .about-section, .projects-section {
     font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
     padding-left: 8%;
-    padding-top: 6%;
+    padding-top: 13%;
     color: rgb(230, 241, 255);
     padding-bottom: 15%;
 }
@@ -144,10 +154,7 @@ footer p, .footerpages{
     margin-left: 30px;
 }
 
-
-/*-----responsive-----*/
-@media only screen and (max-width: 700px){
- 
+@media only screen and (max-width: 1200px){
     .button-text-size{
         font-size: 1.2rem;
     }
@@ -155,7 +162,67 @@ footer p, .footerpages{
     .hero-section, .about-section, .projects-section {
         font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
         padding-left: 8%;
-        padding-top: 15%;
+        padding-top: 25%;
+        color: rgb(230, 241, 255);
+        margin-bottom: 30%;
+    }
+
+    .hero-section h3 {
+        color: #5BCFFF;
+        /*color: #1fbdff;
+        color: rgb(155, 223, 252);*/
+        font-size: 1.2rem;
+        letter-spacing: 2.5px;
+        font-weight: 200;
+    }
+    
+    
+    .hero-section h1 {
+        color: rgb(230, 241, 255);
+        font-weight: 300;
+        font-size: 3.3rem;
+        margin-bottom: 5%;
+    }
+    
+    .hero-section h2 {
+        color: rgb(205, 214, 226);
+        padding-top: 7%;
+        padding-bottom: 7%;
+        font-size: 1.8rem;
+        font-weight: 100;
+    }
+
+    
+}
+
+
+
+
+@media only screen and (max-width: 992px) { 
+    .hero-section-right{
+        padding-top: 15%
+    }
+}
+
+
+
+
+/*-----responsive-----*/
+@media only screen and (max-width: 768px){
+ 
+    .button-text-size{
+        font-size: 1.2rem;
+    }
+
+    .hero-section-right{
+        padding-top: 35%;
+    }
+    
+
+    .hero-section, .about-section, .projects-section {
+        font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+        padding-left: 8%;
+        padding-top: 30%;
         color: rgb(230, 241, 255);
         margin-bottom: 30%;
     }
@@ -200,41 +267,3 @@ footer p, .footerpages{
 }
 
 
-@media only screen and (max-width: 1200px){
-    .button-text-size{
-        font-size: 1.2rem;
-    }
-
-    .hero-section, .about-section, .projects-section {
-        font-family: "Source Sans Pro",-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
-        padding-left: 8%;
-        padding-top: 15%;
-        color: rgb(230, 241, 255);
-        margin-bottom: 30%;
-    }
-
-    .hero-section h3 {
-        color: #5BCFFF;
-        /*color: #1fbdff;
-        color: rgb(155, 223, 252);*/
-        font-size: 1.2rem;
-        letter-spacing: 2.5px;
-        font-weight: 200;
-    }
-    
-    
-    .hero-section h1 {
-        color: rgb(230, 241, 255);
-        font-weight: 300;
-        font-size: 3.3rem;
-        margin-bottom: 5%;
-    }
-    
-    .hero-section h2 {
-        color: rgb(205, 214, 226);
-        padding-top: 7%;
-        padding-bottom: 7%;
-        font-size: 1.8rem;
-        font-weight: 100;
-    }
-}
