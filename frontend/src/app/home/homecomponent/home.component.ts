@@ -2,7 +2,7 @@ import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import * as Feather from 'feather-icons';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
- 
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',

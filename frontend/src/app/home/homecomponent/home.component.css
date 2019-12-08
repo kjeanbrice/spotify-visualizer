@@ -11,8 +11,13 @@
     color: rgb(230, 241, 255);
 }
 
-body{
-    
+.home-page{
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212121 !important; 
 }
 
 .icon-size-md{
