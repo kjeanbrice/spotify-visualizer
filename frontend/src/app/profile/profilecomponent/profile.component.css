@@ -1,0 +1,121 @@
+.container{
+    width: calc(100% - 120px);
+}
+
+.avatar{
+    display: inline-block;
+    color: #fff;
+    fill: currentColor;
+    width: 9.6rem;
+    height: 9.6rem;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 50%;
+    padding: 2.5%;
+    margin-bottom: 1.5%;
+}
+
+.top-analytics-section{
+    padding-top: 7%;
+    text-align: center;
+}
+
+.left-align{
+    display: inline-block;
+    margin-right: 30%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    
+}
+
+.right-align{
+    text-align: left;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    border-radius: 20%/50%;
+    padding: 2% 5.5%; 
+}
+
+.avatar-section{
+    text-align: center;
+    margin-top: 5%;
+    -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+.profile-username{
+    font-size: 3.7rem;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+}
+
+.user-section{
+    text-align: center;
+}
+
+.count{
+    display: block;
+    font-size: 1.1rem;
+    color: rgb(30, 215, 96);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.atitle{
+    display: block; 
+    font-size: 1.1rem;
+    font-weight: 500;
+    color:#b3b3b3;
+    letter-spacing:3px;
+    text-transform: uppercase;
+}
+
+.stats-section{
+    padding-top:1%;
+    -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+.profile-section{
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 1200px){
+}
+
+
+
+
+@media only screen and (max-width: 992px) { 
+  
+
+      .content-padding{
+        margin-bottom: 10%;
+    }
+}
+
+/*-----responsive-----*/
+@media only screen and (max-width: 768px){
+
+  .content-padding{
+      margin-bottom: 10%;
+  }
+
+
+ }
+
+
+
+

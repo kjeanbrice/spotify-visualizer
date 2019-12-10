@@ -1,4 +1,5 @@
 <div class="wrapper collapses">
+    <div class="sidemenu-options">
         <div class="top_navbar">
             <div class="hamburger">
                 <img src="../../../assets/images/logo.png" class="avatar-brand" alt="">
@@ -6,36 +7,46 @@
         </div>
     
         <div class="sidebar">
-            <ul>
-                <li><a href="#">
+            <ul class="menuoptions">
+                <li class="{{menuOptions.profile}}">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="user"></i>
                             <span class="icon-des">Profile</span>
                         </span>
                     </a>
                 </li>
-                <li><a href="#">
+                <li class="{{menuOptions.playlists}}">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="activity"></i>
                             <span class="icon-des">Playlists</span>
                         </span>
                     </a></li>
-                <li><a href="#">
+                <li class="{{menuOptions.toptracks}}">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="music"></i>
                             <span class="icon-des">Top Tracks</span>
                         </span>
                     </a>
                 </li>
-                <li><a href="#" class="active">
+                <li class="{{menuOptions.topartists}}">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="globe"></i>
                             <span class="icon-des">Top Artists</span>
                         </span>
                     </a>
                 </li>
-                <li><a href="#">
+                <li><a href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="log-out"></i>
                             <span class="icon-des">Log out</span>
                         </span>
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+
+
+        <div id="main-container" class="main_container">
+            <ng-content></ng-content>    
         </div>
     </div>

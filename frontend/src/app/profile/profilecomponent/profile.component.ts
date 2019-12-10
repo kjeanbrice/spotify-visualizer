@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 declare var jQuery: any;
 
@@ -7,7 +7,14 @@ declare var jQuery: any;
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit{
+export class ProfileComponent implements OnInit, AfterViewInit {
+    menuOptions: object = {
+        profile: 'active',
+        playlists: '',
+        topartists: '',
+        toptracks: '',
+    };
+
     constructor() { }
     ngOnInit() {
     }

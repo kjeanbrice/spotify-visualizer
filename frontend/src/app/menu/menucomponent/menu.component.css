@@ -3,19 +3,18 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; 
 }
 
+
 .avatar-brand{
-    width:4.7rem;
-    height:4.7rem;
+    width:4.8rem;
+    height:4.8rem;
 }
 
 .icon-des{
     display: block;
-    padding-top: 10%;
-    font-size: .7rem;
+    font-size: .8rem;
 }
 
 .icon-size-md{
@@ -23,10 +22,13 @@
     height: 1.4rem;
 }
 
+
+
 .wrapper{
     margin: 10px;
 }
-  .wrapper .top_navbar{
+
+.wrapper .top_navbar{
     width: calc(100% - 20px);
     height: 60px;
     display: flex;
@@ -94,12 +96,20 @@
   .wrapper .top_navbar .top_menu ul li a:hover i{
     color: #fff;
   }
+
+  .sidebar > ul{
+    height: calc(100% - 60px);
+  }
+
+  .sidebar > ul > li{
+    height: 20%;
+  }
   
   .wrapper .sidebar{
     position: fixed;
     top: 70px;
     left: 10px;
-    padding-top: 2%;
+  
     background: black;
     width: 200px;
     height: calc(100% - 80px);
@@ -109,17 +119,40 @@
   
   .wrapper .sidebar ul li a{
       display: block;
-      padding: 20px;
       color: #fff;
       position: relative;
       margin-bottom: 1px;
       color: #b3b3b3;
       white-space: nowrap;
-      -webkit-transition: background-color .5s ease-in-out;
-      -moz-transition: background-color .5s ease-in-out;
-      -o-transition: background-color  .5s ease-in-out;
-      transition: background-color .5s ease-in-out;
+      -webkit-transition: background-color .2s ease-in-out;
+      -moz-transition: background-color .2s ease-in-out;
+      -o-transition: background-color  .2s ease-in-out;
+      transition: background-color .2s ease-in-out;
   }
+
+  ul.menuoptions > li{
+    padding-top: 20%;
+    padding-bottom: 20%;
+    border-left: 4px solid black;
+    -webkit-transition: background-color .3s ease-in-out, border-left .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out, border-left .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out, border-left .3s ease-in-out;
+    transition: background-color .3s ease-in-out, border-left .3s ease-in-out;
+  }
+
+  ul.menuoptions > li:hover{
+    border-left: 4px solid rgb(30, 215, 96);
+    background-color: rgb(24, 24, 24);
+    color: #fff;
+  }
+
+ 
+
+  
+
+  
+
+  
   
   .wrapper .sidebar ul li a:before{
     content: "";
@@ -128,11 +161,6 @@
     left: 0;
     width: 3px;
     height: 100%;
-    background-color: #1db954;
-    -webkit-transition: background-color .5s ease-in-out;
-    -moz-transition: background-color .5s ease-in-out;
-    -o-transition: background-color  .5s ease-in-out;
-    transition: background-color .5s ease-in-out;
     display: none;
   }
   
@@ -145,24 +173,21 @@
     display: inline-block;
   }
   
-  .wrapper .sidebar ul li a:hover,
-  .wrapper .sidebar ul li a.active{
-    background-color: rgb(24, 24, 24);
-    color: #fff;
-  }
   
-  .wrapper .sidebar ul li a:hover:before,
-  .wrapper .sidebar ul li a.active:before{
-    display: block;
-  }
   
+  
+  #main-container{
+    padding: 0;
+  }
+
   .wrapper .main_container{
-    width: (100% - 200px);
+    width: calc(100% - 200px);
     margin-top: 70px;
     margin-left: 200px;
     padding: 15px;
     transition: all 0.3s ease;
   }
+  
   
   .wrapper .main_container .item{
     background: #fff;
@@ -171,8 +196,11 @@
     font-size: 14px;
     line-height: 22px;
   }
+
+  
   
   .wrapper.collapses .sidebar{
+    padding-top: 6%;
     width: 120px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px;
   }
@@ -194,7 +222,36 @@
   }
   
   .wrapper.collapses .main_container{
-    width: (100% - 70px);
-    margin-left: 70px;
+    width: calc(100% - 120px);
+    margin-left: 120px;
   }
+
+  .active{
+    background-color: rgb(24, 24, 24);
+    border-left: 4px solid rgb(30, 215, 96) !important;
+    color: #fff;
+  }
+
+
+  @media only screen and (max-width: 1200px){
+  }
+
+
+
+
+  @media only screen and (max-width: 992px) { 
+   
+  }
+  
+  /*-----responsive-----*/
+  @media only screen and (max-width: 768px){
+    *{
+      font-size: 10px !important;
+    }
+
+    .icon-des{
+      display:none;
+    }
+ 
+   }
   
