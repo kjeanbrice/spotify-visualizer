@@ -12,31 +12,7 @@ html{
     margin: 0;
 }
 
-@media only screen and (max-width: 1200px){
-    html{
-        font-size: 15px !important;
-      }   
-}
 
-
-
-
-@media only screen and (max-width: 992px) { 
-    html{
-        font-size: 14px !important;
-      }
-
-  
-}
-
-/*-----responsive-----*/
-@media only screen and (max-width: 768px){
-  html{
-    font-size: 11px !important;
-  }
-
-
- }
 
 body {
     margin: 0;
@@ -53,3 +29,26 @@ body {
 .dropdown-toggle::after{
     content:none !important;
 }
+
+
+@media only screen and (max-width: 1200px){
+
+}
+
+
+
+
+@media only screen and (max-width: 992px) { 
+  html{
+    font-size:15px;
+  }
+}
+
+/*-----responsive-----*/
+@media only screen and (max-width: 768px){
+  html{
+    font-size:14.5px;
+  }
+
+
+ }

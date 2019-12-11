@@ -1,6 +1,4 @@
-.container{
-    width: calc(100% - 100px);
-}
+
 
 .avatar{
     display: inline-block;
@@ -87,13 +85,13 @@
     display: block;
     font-size: 1.1rem;
     color: rgb(30, 215, 96);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
 .atitle{
     display: block; 
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 500;
     color:#b3b3b3;
     letter-spacing:3px;
@@ -148,6 +146,18 @@
     .user-playlist-section:last-child{
         margin-top: 15%;   
     }
+
+    .profile-section{
+        color: #fff;
+        height: calc(100% - 75px);
+        width: initial;
+        margin-left:initial;
+        margin-bottom: 75px;
+        min-height: initial;
+        min-width:100vh;    
+    }
+
+    
 
  }
 
