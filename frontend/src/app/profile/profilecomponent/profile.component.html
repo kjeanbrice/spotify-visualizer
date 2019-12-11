@@ -1,5 +1,6 @@
-<app-menu [menuOptions]="menuOptions">
-    <div class="container profile-section">
+<app-menu [menuOptions]="menuOptions"></app-menu>
+<div class="profile-section">
+    <div class="container-fluid">
 
         <div class="user-section">
             <div class="row">
@@ -21,50 +22,47 @@
 
 
             <div class="row justify-content-md-center stats-section">
-                    <div class="col-md-auto">
-                        <span class="count">0</span>
-                        <span class="atitle">Followers</span>
-                    </div>
-                    <div class="col-md-auto">
-                        <span class="count">0</span>
-                        <span class="atitle">Following</span>
-                    </div>
-                    <div class="col-md-auto">
-                        <span class="count">0</span>
-                        <span class="atitle">Playlists</span>
-                    </div>
+                <div class="col-md-auto">
+                    <span class="count">0</span>
+                    <span class="atitle">Followers</span>
+                </div>
+                <div class="col-md-auto">
+                    <span class="count">0</span>
+                    <span class="atitle">Following</span>
+                </div>
+                <div class="col-md-auto">
+                    <span class="count">0</span>
+                    <span class="atitle">Playlists</span>
+                </div>
             </div>
         </div>
 
 
-        <div class="top-analytics-section">
-            <div class="row justify-content-md-center">
-                <div class="content-padding col-md-12 col-lg-6 col-sm-12">
-                    <div class="left-align">
-                        <span>Top Artists of All Time</span>
-                    </div>
-                    <div class="right-align">
-                            <div class="button-white">
-                                <span>See More</span>
-                            </div>
-                    </div>
-                    
+        <div class="top-analytics-section row">
+
+            <div class="user-playlist-section">
+
+                <div class="top-title">
+                    <span>Top Artists of All Time</span>
                 </div>
 
-                <div class="col-md-12 col-lg-6 col-sm-12">
-                        <div class="left-align">
-                            <span>Top Tracks of All Time</span>
-                        </div>
-                        <div class="right-align">
-                            <div class="button-white">
-                                <span>See More</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="button-white top-button">
+                    <span>See More</span>
+                </div>
 
+            </div>
+
+            <div class="user-playlist-section">
+
+                <div class="top-title">
+                    <span>Top Artists of All Time</span>
+                </div>
+
+                <div class="button-white top-button">
+                    <span>See More</span>
+                </div>
 
             </div>
         </div>
-
     </div>
-</app-menu>
+</div>

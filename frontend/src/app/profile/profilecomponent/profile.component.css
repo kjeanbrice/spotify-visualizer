@@ -1,5 +1,5 @@
 .container{
-    width: calc(100% - 120px);
+    width: calc(100% - 100px);
 }
 
 .avatar{
@@ -16,30 +16,52 @@
 }
 
 .top-analytics-section{
-    padding-top: 7%;
-    text-align: center;
-}
-
-.left-align{
-    display: inline-block;
-    margin-right: 30%;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: .5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+ 
+    margin-top: 15%;
     
 }
 
-.right-align{
-    text-align: left;
+.user-playlist-section{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-basis: 45%;
+    
+}
+
+.top-section-container{
+    width:50%;
+    display: flex;
+}
+
+
+.top-title{
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin: auto;
+    
+}
+
+.top-button{
+    text-align: center;
     display: inline-block;
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 700;
     letter-spacing: 1px;
     border: 1px solid #fff;
-    border-radius: 20%/50%;
-    padding: 2% 5.5%; 
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 7px 20px;
+    margin: auto;
+    
 }
+
 
 .avatar-section{
     text-align: center;
@@ -71,7 +93,7 @@
 
 .atitle{
     display: block; 
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     color:#b3b3b3;
     letter-spacing:3px;
@@ -89,6 +111,9 @@
 
 .profile-section{
     color: #fff;
+    width: calc(100% - 100px);
+    margin-left: 100px;
+    min-height: 100vh;
 }
 
 
@@ -101,18 +126,28 @@
 @media only screen and (max-width: 992px) { 
   
 
-      .content-padding{
-        margin-bottom: 10%;
-    }
+   
 }
 
 /*-----responsive-----*/
 @media only screen and (max-width: 768px){
+    .top-analytics-section{
+        justify-content: space-around;
+        flex-direction: column;
+     
+        margin-top: 15%;        
+    }
+    
+    .user-playlist-section{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-basis: 100%;     
+    }
 
-  .content-padding{
-      margin-bottom: 10%;
-  }
-
+    .user-playlist-section:last-child{
+        margin-top: 15%;   
+    }
 
  }
 
