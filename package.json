@@ -6,7 +6,7 @@
   "scripts": {
     "server": "cd backend && node server",
     "start": "npm run server",
-    "postinstall": "cd frontend && ng build --aot --target=production"
+    "postinstall": "cd frontend && ng build --aot --prod"
   },
   "engines": {
     "node": "12.13.1"

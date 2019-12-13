@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-    @Input() menuOptions: object;
+    @Input() menuOptions: any;
 
     constructor() {
         if (this.menuOptions === undefined || this.menuOptions === null) {

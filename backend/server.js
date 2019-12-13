@@ -9,7 +9,7 @@ const port = process.env.PORT || 8888;
 const redirect_link = process.env.REDIRECT_URI || 'http://localhost:8888/callback';
 
 
-
+app.use(express.static(path.resolve(__dirname, '../frontend/dist/SpotifyProfile')));
 app.get('/login', (req, res) => {
     const scopes = 'user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public';
     res.redirect('https://accounts.spotify.com/authorize?' +
@@ -75,7 +75,7 @@ app.get('/refresh_token', function (req, res) {
 });
 
 app.get('*', function(request, response) {
-    response.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
+    response.sendFile(path.resolve(__dirname, '../frontend/dist/SpotifyProfile', 'index.html'));
 });
 
 app.listen(port, () => {
