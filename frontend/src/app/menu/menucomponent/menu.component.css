@@ -7,10 +7,6 @@
 }
 
 
-
-
-
-
 .side-nav-section{
   width:100%;
 }
@@ -68,6 +64,11 @@ ul.side-nav-options > li:hover{
   color:rgb(255, 255, 255);
   border-left: 4px solid rgb(30, 215, 96);
   background-color: rgb(24, 24, 24);
+}
+
+#logo:hover{
+  border-left: 4px solid rgba(255, 255, 255, .0);
+  background-color: black;
 }
 
 

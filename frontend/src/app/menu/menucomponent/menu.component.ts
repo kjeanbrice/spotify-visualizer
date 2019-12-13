@@ -8,7 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuComponent implements OnInit {
     @Input() menuOptions: object;
 
-    constructor() {}
+    constructor() {
+        if (this.menuOptions === undefined || this.menuOptions === null) {
+            this.menuOptions = {
+                profile: '',
+                playlists: '',
+                topartists: '',
+                toptracks: '',
+                recentsongs: ''
+            };
+        }
+    }
 
     ngOnInit(): void {}
 }

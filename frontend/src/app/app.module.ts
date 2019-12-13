@@ -6,6 +6,7 @@ import {MenuModule} from './menu/menu.module';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileModule} from './profile/profile.module';
+import {RecentSongsModule} from './recentsongs/recentsongs.module';
 
 import { AppComponent } from './app.component';
 
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     HomeModule,
     HttpClientModule,
     MenuModule,
-    ProfileModule
+    ProfileModule,
+    RecentSongsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

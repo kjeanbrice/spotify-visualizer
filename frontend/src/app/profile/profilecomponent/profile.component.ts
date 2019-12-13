@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
         playlists: '',
         topartists: '',
         toptracks: '',
+        recentsongs: ''
     };
 
     constructor() { }
