@@ -21,6 +21,12 @@
   },
   "author": "Karl Jean-Brice",
   "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "query-string": "^6.9.0",
+    "request": "^2.88.0"
+  },
   "bugs": {
     "url": "https://github.com/kjeanbrice/SpotifyProfile/issues"
   },
