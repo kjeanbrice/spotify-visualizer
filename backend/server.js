@@ -3,9 +3,11 @@ var querystring = require('query-string');
 require('dotenv').config();
 var request = require('request');
 var app = express();
+const path = require('path');
 
 const port = process.env.PORT || 8888;
 const redirect_link = process.env.REDIRECT_URI || 'http://localhost:8888/callback';
+
 
 
 app.get('/login', (req, res) => {
@@ -70,6 +72,10 @@ app.get('/refresh_token', function (req, res) {
             res.send({ access_token });
         }
     });
+});
+
+app.get('*', function(request, response) {
+    response.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
 });
 
 app.listen(port, () => {

@@ -1,0 +1,24 @@
+{
+  "name": "spotifyprofile",
+  "version": "1.0.0",
+  "description": "Spotify Visualizer",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd backend && node server",
+    "start": "npm run server",
+    "postinstall": "cd frontend && ng build --aot --target=production"
+  },
+  "engines": {
+    "node": "12.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjeanbrice/SpotifyProfile.git"
+  },
+  "author": "Karl Jean-Brice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjeanbrice/SpotifyProfile/issues"
+  },
+  "homepage": "https://github.com/kjeanbrice/SpotifyProfile#readme"
+}
