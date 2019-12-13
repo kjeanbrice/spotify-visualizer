@@ -196,6 +196,7 @@ ul.side-nav-options > li:hover{
     .active{
       background-color: rgb(24, 24, 24);
       border-top: 4px solid rgb(30, 215, 96) !important;
+      border-left:none !important;
       color: #fff;
     }
  

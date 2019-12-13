@@ -12,6 +12,14 @@ html{
     margin: 0;
 }
 
+.bg-white-spotify{
+  color:#fff;
+}
+
+.bg-gray-spotify{
+  color:rgb(155, 155, 155);
+}
+
 
 
 body {
