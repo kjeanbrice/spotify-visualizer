@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "server": "cd backend && node server",
+    "buildserver": "cd backend && npm install",
+    "buildclient": "cd frontend && npm install && ng build --aot --prod",
+    "buildapp": "npm run buildserver && npm run buildclient",
     "start": "npm run server",
-    "postbuild": "cd frontend && ng build --aot --prod"
+    "postbuild": "npm run buildserver && npm run buildclient"
   },
   "engines": {
     "node": "12.13.1",
