@@ -9,7 +9,7 @@
     "buildclient": "cd frontend && npm install && ng build --aot --prod",
     "buildapp": "npm run buildserver && npm run buildclient",
     "start": "npm run server",
-    "postbuild": "npm run buildserver && npm run buildclient"
+    "heroku-postbuild": "npm run buildserver && npm run buildclient"
   },
   "engines": {
     "node": "12.13.1",
