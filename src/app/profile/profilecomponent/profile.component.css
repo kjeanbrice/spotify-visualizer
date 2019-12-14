@@ -68,7 +68,7 @@ ul{
     width:100%;
 }
 .avatar-brand{
-   
+    border-radius:5px; 
 }
 
 .playlist-image{
@@ -116,7 +116,7 @@ ul.playlist-songs-section{
 
 
 span.playlist-des{
-    font-size:.9rem;
+    font-size:1rem;
     letter-spacing:.5px;
     font-weight:500;
 }
@@ -253,7 +253,7 @@ div.playlist-data > span.duration{
 .profile-section{
     color: #fff;
     width: calc(100% - 100px);
-    padding: 15% 2%;
+    padding: 10% 2%;
     margin-left: 100px;
     min-height: 100vh;
 }
