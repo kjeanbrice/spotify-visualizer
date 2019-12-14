@@ -196,7 +196,6 @@ div.playlist-data > span.duration{
 
 .avatar-section{
     text-align: center;
-    margin-top: 5%;
     -moz-user-select: none; /* Firefox */
       -ms-user-select: none; /* Internet Explorer */
    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
