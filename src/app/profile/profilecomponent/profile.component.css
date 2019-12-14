@@ -252,7 +252,7 @@ div.playlist-data > span.duration{
 .profile-section{
     color: #fff;
     width: calc(100% - 100px);
-    padding: 70px 50px;
+    padding: 15% 2%;
     margin-left: 100px;
     min-height: 100vh;
 }
@@ -293,11 +293,11 @@ div.playlist-data > span.duration{
     .profile-section{
         color: #fff;
         height: calc(100% - 75px);
-        width: initial;
+        margin-left:0;
+        width: 100%;
         margin-bottom:25%;
-        margin-left:initial;
         min-height: initial;
-        min-width:100vh;    
+        max-width:100vh;    
     }
 
     
