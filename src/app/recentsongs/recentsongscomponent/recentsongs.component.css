@@ -8,9 +8,8 @@
 
 
 .title-section{
-    font-size:1.75rem;
-    font-weight:700;
-    letter-spacing: .5px;
+    font-size:1.9rem;
+    font-weight:600;
     
 }
 
@@ -70,7 +69,7 @@
     display: inline-block;
     font-size: 1.3rem;
     font-weight: 700;
-    letter-spacing: .5px;
+   
 
     
 }
@@ -86,7 +85,7 @@ ul{
 }
 
 .playlist-image{
-    margin-right:1%;
+    margin-right:2%;
 }
 
 .playlist-song{
@@ -104,7 +103,6 @@ a:hover{
 
 .playlist-title{
     font-size:1rem;
-    letter-spacing:.5px;
     font-weight:500;
     padding-bottom:1px;
  
@@ -131,7 +129,6 @@ ul.playlist-songs-section{
 
 span.playlist-des{
     font-size:1rem;
-    letter-spacing:.5px;
     font-weight:500;
 }
 
@@ -174,7 +171,6 @@ ul.playlist-songs-section > li:last-child{
 
 .duration{
     margin: auto 0;
-    letter-spacing:.5px;
     font-weight:500;
     font-size:.9rem;
 }
@@ -190,7 +186,6 @@ div.playlist-data > span.duration{
     text-transform: uppercase;
     font-size: .85rem;
     font-weight: 600;
-    letter-spacing: 1px;
     border: 1px solid #fff;
     cursor: pointer;
     border-radius: 16px;
@@ -222,7 +217,6 @@ div.playlist-data > span.duration{
 
 .profile-username{
     font-size: 3.7rem;
-    letter-spacing: 2.5px;
     font-weight: 600;
 }
 
@@ -243,7 +237,6 @@ div.playlist-data > span.duration{
     font-size: .9rem;
     font-weight: 500;
     color:#b3b3b3;
-    letter-spacing:3px;
     text-transform: uppercase;
 }
 
@@ -317,8 +310,7 @@ div.playlist-data > span.duration{
         margin-left:0;
         width: 100%;
         margin-bottom:25%;
-        min-height: initial;
-        max-width:100vh;    
+        min-height: initial;  
     }
 
     

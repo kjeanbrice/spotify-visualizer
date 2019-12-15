@@ -1,4 +1,25 @@
+.recentsongs-section{
+    color: #fff;
+    width: calc(100% - 100px);
+    padding: 10% 5%;
+    margin-left: 100px;
+    min-height: 100vh;
+}
 
+
+.title-section{
+    font-size:1.9rem;
+    font-weight:600;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis:50%;  
+}
+
+.left-title{
+    margin:auto 0;
+    flex-basis:50%;
+}
 
 .avatar{
     display: inline-block;
@@ -17,8 +38,47 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    flex-basis:50%;
     margin-top: 15%;
     
+}
+
+.search-options{
+    display:flex;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+    flex-basis:50%;
+   
+}
+.search-options > span{
+    margin: auto 0;
+    margin-right: 5%;
+    border-bottom: none;
+    cursor:pointer;
+    -webkit-transition: color .5s ease-in-out;
+    -moz-transition: color .5s ease-in-out;
+    -o-transition: color .5s ease-in-out;
+    transition: color .5s ease-in-out;
+}
+
+.search-options > span:hover{
+    color:#fff;
+    margin: auto 0;
+    margin-right: 5%;
+    border-bottom: none;
+    cursor:pointer;
+}
+
+
+
+
+.search-options > span.active{
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.search-options > span:last-child{
+    margin-right: 0;
 }
 
 .user-playlist-section{
@@ -31,7 +91,7 @@
 
 .user-playlist-area{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100, 1fr));
     gap:50px;
     width:100%;
     margin-top: 10%;
@@ -56,6 +116,9 @@
     display: inline-block;
     font-size: 1.3rem;
     font-weight: 700;
+   
+
+    
 }
 
 ul{
@@ -65,7 +128,7 @@ ul{
     width:100%;
 }
 .avatar-brand{
-    border-radius:5px; 
+   border-radius:5px;
 }
 
 .playlist-image{
@@ -117,7 +180,7 @@ span.playlist-des{
 }
 
 ul.playlist-songs-section > li{
-    margin-bottom: 7%;
+    margin-bottom: 5%;
 }
 
 ul.playlist-songs-section > li:last-child{
@@ -137,6 +200,7 @@ ul.playlist-songs-section > li:last-child{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+   
     
     margin: auto 0;
     margin-right: 10%;
@@ -190,6 +254,7 @@ div.playlist-data > span.duration{
 
 .avatar-section{
     text-align: center;
+    margin-top: 5%;
     -moz-user-select: none; /* Firefox */
       -ms-user-select: none; /* Internet Explorer */
    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
@@ -199,7 +264,6 @@ div.playlist-data > span.duration{
 
 .profile-username{
     font-size: 3.7rem;
-    letter-spacing: 1.5px;
     font-weight: 600;
 }
 
@@ -220,7 +284,6 @@ div.playlist-data > span.duration{
     font-size: .9rem;
     font-weight: 500;
     color:#b3b3b3;
-    letter-spacing:1px;
     text-transform: uppercase;
 }
 
@@ -272,9 +335,15 @@ div.playlist-data > span.duration{
      
         margin-top: 15%;        
     }
-    
-    .user-playlist-item-container{
-       
+
+    .search-options{
+        justify-content: center;
+        margin-top:5%;
+    }
+
+    .title-section{
+        text-align: center;
+        flex-direction:column;
     }
     
     .user-playlist-section{
@@ -288,14 +357,13 @@ div.playlist-data > span.duration{
         margin-top: 15%;   
     }
 
-    .profile-section{
+    .recentsongs-section{
         color: #fff;
         height: calc(100% - 75px);
         margin-left:0;
         width: 100%;
         margin-bottom:25%;
-        min-height: initial;
-         
+        min-height: initial;   
     }
 
     
