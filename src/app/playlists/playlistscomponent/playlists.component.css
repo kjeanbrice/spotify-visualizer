@@ -76,4 +76,8 @@ a{
         min-height: initial;
         max-width:100vh;    
     }
+
+    .title-section{
+        text-align:center;
+    }
  }
