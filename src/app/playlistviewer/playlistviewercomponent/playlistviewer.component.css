@@ -17,6 +17,31 @@
     flex-basis:30%;
 }
 
+.top-button{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: .85rem;
+    font-weight: 600;
+    border: 1px solid rgb(29, 185, 84);
+    background-color: rgb(29, 185, 84);
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 7px 20px;
+    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+   
+    
+}
+
+.top-button:hover{
+    background-color:#fff;
+    color:black;
+    border: 1px solid black;
+}
+
 .playlist-track-container{
     display:flex;
     flex-direction:row;
@@ -78,6 +103,15 @@ a{
 .playlist-image{
     margin-right:2.5%;
 }
+
+div.playlist-right-container > ul > li{
+    margin-bottom: 7%;
+}
+
+
+div.playlist-right-container > ul > li:last-child{
+    margin-bottom: 0;
+}
 a:hover{
     text-decoration: none;
 }
@@ -123,6 +157,53 @@ a:hover{
     padding-bottom:0px;
 }
 
+.title-section{
+    font-size:1.9rem;
+    font-weight:600;   
+}
+
+.title-subtitle{
+    font-size: 1.1rem;
+    font-weight: 600
+}
+
+.playlist-title-container > div{
+    margin-top:5%;
+    margin-bottom:5%
+}
+
+.playlist-title-area > div:last-child{
+    margin-top: 4%;
+}
+
+
+.top-button{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing:1px;
+    font-size: .85rem;
+    font-weight: 600;
+    border: 1px solid rgb(29, 185, 84);
+    background-color: rgb(29, 185, 84);
+    color:#fff;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 7px 20px;
+    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+   
+    
+}
+
+.top-button:hover, .top-button:focus{
+    background-color: rgb(30, 215, 96);
+    border: 1px solid rgb(30, 215, 96);
+    color:#fff;
+}
+
 
 
 
@@ -158,6 +239,11 @@ a:hover{
         margin-top: 15%;   
     }
 
+    .playlist-title-container{
+        display:flex;
+        flex-direction:column;
+    }
+
     .playlist-section{
         color: #fff;
         height: calc(100% - 75px);
@@ -167,6 +253,38 @@ a:hover{
         min-height: initial;   
     }
 
+    .playlist-container{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .playlist-image-left{
+        margin:0 auto;
+        width:60%;
+    }
+
+  
+
+    .playlist-left{
+        margin-bottom: 7%;
+    }
+
+    .playlist-title-container{
+        flex-direction:column-reverse;
+    }
+
+    .playlist-title-container > div {
+        margin-top:0;
+        margin-bottom:3%;
+    }
+
+    .playlist-title-area > div:last-child{
+        margin-top: 1%;
+    }
+
+    .top-button{
+        margin-top: 7%;
+    }
     
 
  }
