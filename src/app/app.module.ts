@@ -12,6 +12,7 @@ import {PlaylistsModule} from './playlists/playlists.module';
 import {TopTracksModule} from './toptracks/toptracks.module';
 import { AppComponent } from './app.component';
 import {PlaylistViewerModule} from './playlistviewer/playlistviewer.module';
+import {TrackModule} from './track/track.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {PlaylistViewerModule} from './playlistviewer/playlistviewer.module';
     ProfileModule,
     RecentSongsModule,
     PlaylistsModule,
-    PlaylistViewerModule
+    PlaylistViewerModule,
+    TrackModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -85,6 +85,7 @@ nav a {
     background-image: url("/assets/images/herobackground.svg");
     /*position: absolute;
     z-index: -1;*/
+    background-size:cover;
     background-repeat: no-repeat;
   
 }

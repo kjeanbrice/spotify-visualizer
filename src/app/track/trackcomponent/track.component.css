@@ -1,0 +1,119 @@
+.track-section{
+    color: #fff;
+    width: calc(100% - 100px);
+    padding: 8% 5%;
+    margin-left: 100px;
+    min-height: 100vh;
+}
+
+.track-container{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:"left right";
+}
+
+
+
+.track-left{
+    display:flex;
+    justify-content: center;
+    flex-direction:row;
+    width:100%;
+    grid-area:left;
+}
+
+.track-image-left{
+    margin:0 auto;
+    width:80%;
+    border-radius: 25px;
+}
+
+.track-right{
+    display:flex;
+    flex-direction:column;
+    grid-area:right;
+}
+
+.track-details{
+    display:flex;
+    flex-direction:column;
+}
+
+.track-details > h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.track-details > h2{
+    font-size: 2rem;
+    font-weight:600;
+}
+
+.track-details > h1, .track-details > h2{
+    margin-bottom:2.5%;
+}
+
+.track-button{
+    margin-top:5%;
+}
+
+.track-details > h3{
+    font-size: 1.5rem;
+    font-weight:100;
+}
+
+.top-button{
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid rgb(29, 185, 84);
+    background-color: rgb(29, 185, 84);
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 7px 20px;
+    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    -o-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
+   
+    
+}
+
+.top-button:hover, .top-button:focus{
+    background-color: rgb(30, 215, 96);
+    border: 1px solid rgb(30, 215, 96);
+    color:#fff;
+}
+
+
+/*-----responsive-----*/
+@media only screen and (max-width: 768px){
+
+    .track-section{
+        color: #fff;
+        height: calc(100% - 75px);
+        margin-left:0;
+        width: 100%;
+        margin-bottom:25%;
+        min-height: initial;   
+    }
+
+    .track-container{
+        grid-template-areas:"right right" "left left";
+    }
+
+    .track-right{
+        text-align:center;
+    }
+
+    .track-left{
+        margin-top: 8%;
+        text-align:center;
+    }
+
+    .track-image-left{
+        width:55%;
+    }
+ }
