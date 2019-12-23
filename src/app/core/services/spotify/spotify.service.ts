@@ -71,7 +71,7 @@ export class SpotifyService {
     }
 
 
-    public getTopTracks(opt: any, type: string): Observable<any> {
+    public getTopAnalytics(opt: any, type: string): Observable<any> {
 
         if (opt === undefined || opt === null) {
             opt = {};
@@ -159,7 +159,7 @@ export class SpotifyService {
             if (i === obj.length - 1) {
                 result += obj[i].name;
             } else {
-                result += obj[i].name + ',';
+                result += obj[i].name + ', ';
             }
         }
 

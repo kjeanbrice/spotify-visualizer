@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
     profileData: any;
     toptracksData: any[];
+    topArtistsData: any[];
 
     constructor(private spotifyService: SpotifyService) {
         this.profileData = {
@@ -30,12 +31,14 @@ export class ProfileComponent implements OnInit, AfterViewInit {
         };
 
         this.toptracksData = [];
+        this.topArtistsData = [];
     }
     ngOnInit() {
        this.getProfileData();
        this.getFollowedArtist();
        this.getUserPlaylists();
        this.getTopTracks();
+       this.getTopArtists();
 
     }
 
@@ -79,7 +82,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
 
     getTopTracks() {
-        this.spotifyService.getTopTracks(null, 'tracks').subscribe(
+        this.spotifyService.getTopAnalytics({limit: 5}, 'tracks').subscribe(
             (res) => {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
@@ -96,6 +99,26 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             },
             (err) => {
                 console.log('Profile: Unable to load top tracks');
+            }
+        );
+    }
+
+
+    getTopArtists() {
+        this.spotifyService.getTopAnalytics({limit: 5}, 'artists').subscribe(
+            (res) => {
+                const item = res.items;
+                // tslint:disable-next-line:prefer-for-of
+                for (let i = 0; i < item.length; i++) {
+                    const artist = {
+                        artistName: item[i].name,
+                        artistImage: item[i].images[2].url
+                    };
+                    this.topArtistsData.push(artist);
+                }
+            },
+            (err) => {
+                console.log('Profile: Unable to load top artist');
             }
         );
     }
