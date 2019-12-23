@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as Feather from 'feather-icons';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
+import {Router} from '@angular/router';
 declare var jQuery: any;
 
 @Component({
@@ -21,7 +22,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     toptracksData: any[];
     topArtistsData: any[];
 
-    constructor(private spotifyService: SpotifyService) {
+    constructor(private spotifyService: SpotifyService, private router: Router) {
         this.profileData = {
             followerCount: 0,
             followingCount: 0,
@@ -82,7 +83,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
 
     getTopTracks() {
-        this.spotifyService.getTopAnalytics({limit: 5}, 'tracks').subscribe(
+        this.spotifyService.getTopAnalytics(null, {limit: 10}, 'tracks').subscribe(
             (res) => {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
@@ -92,7 +93,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
                         trackName: item[i].name,
                         albumName: item[i].album.name,
                         artists: this.spotifyService.parseArtistsFromTopTrack(item[i].artists),
-                        albumImage: item[i].album.images[2].url
+                        albumImage: item[i].album.images[2].url,
+                        trackID: item[i].id
                     };
                     this.toptracksData.push(track);
                 }
@@ -105,14 +107,15 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
 
     getTopArtists() {
-        this.spotifyService.getTopAnalytics({limit: 5}, 'artists').subscribe(
+        this.spotifyService.getTopAnalytics(null, {limit: 10}, 'artists').subscribe(
             (res) => {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
                 for (let i = 0; i < item.length; i++) {
                     const artist = {
                         artistName: item[i].name,
-                        artistImage: item[i].images[2].url
+                        artistImage: item[i].images[2].url,
+                        artistID: item[i].id
                     };
                     this.topArtistsData.push(artist);
                 }
@@ -121,6 +124,12 @@ export class ProfileComponent implements OnInit, AfterViewInit {
                 console.log('Profile: Unable to load top artist');
             }
         );
+    }
+
+    onClickTrack(id: string) {
+        this.router.navigate(['/track'], {queryParams: {
+            id
+        }});
     }
 
     ngAfterViewInit() {

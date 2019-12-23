@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ProfileComponent} from './profilecomponent/profile.component';
 import {ProfileRoutingModule} from './profile-routing.module';
 import {MenuModule} from '../menu/menu.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import {MenuModule} from '../menu/menu.module';
     imports: [
         CommonModule,
         ProfileRoutingModule,
-        MenuModule
+        MenuModule,
+        RouterModule
     ],
     providers: [
     ],

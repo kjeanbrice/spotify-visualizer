@@ -69,7 +69,7 @@
                     <ul class="playlist-songs-section">
                         <!--grid column-->
                         <li *ngFor="let artist of topArtistsData">
-                            <a class="playlist-song">
+                            <a (click) = "onClickArtist(artist.artistID)" class="playlist-song">
                                 <span class="playlist-image">
                                     <img src="{{artist.artistImage}}"
                                         class="avatar-brand-artist" alt="Image Error">
@@ -96,14 +96,14 @@
                                 <span>Top Tracks of All Time</span>
                             </div>
         
-                            <div class="button-white top-button">
+                            <div class="button-white top-button" routerLink="/toptracks">
                                 <span>See More</span>
                             </div>
                             <div class="break"></div>
                             <ul class="playlist-songs-section">
                                 <!--grid column-->
                                 <li *ngFor="let track of toptracksData">
-                                    <a class="playlist-song" href="javscript(void);">
+                                    <a (click) = "onClickTrack(track.trackID)" class="playlist-song" href="javascript:void(0);">
                                         <span class="playlist-image">
                                             <img src="{{track.albumImage}}"
                                                 class="avatar-brand" alt="">

@@ -71,7 +71,7 @@ export class SpotifyService {
     }
 
 
-    public getTopAnalytics(opt: any, type: string): Observable<any> {
+    public getTopAnalytics(link: string, opt: any, type: string): Observable<any> {
 
         if (opt === undefined || opt === null) {
             opt = {};
@@ -85,7 +85,11 @@ export class SpotifyService {
             params: opt
         };
 
-        const addr = 'https://api.spotify.com/v1/me/top/' + type;
+
+        let addr = 'https://api.spotify.com/v1/me/top/' + type;
+        if (link !== null) {
+            addr = link;
+        }
         const results = this.http.get(addr, httpOptions).pipe(
             map(response => {
                 return response;
