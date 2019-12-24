@@ -3,6 +3,7 @@
     <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
     <div class="title-section">
         <span>Recently Played Tracks</span>
+        
     </div>
     <div>
         <ul class="playlist-songs-section">
@@ -10,6 +11,9 @@
             <li *ngFor="let track of recentlyPlayedTracksData">
                 <a class="playlist-song" (click)="onClickTrack(track.trackID)" href="javscript:(void);">
                     <span class="playlist-image">
+                        <div class="item-overlay">
+                            <i class="icon-size-link" data-feather="info"></i>
+                        </div>
                         <img src="{{track.albumImage}}"
                             class="avatar-brand" alt="">
                     </span>

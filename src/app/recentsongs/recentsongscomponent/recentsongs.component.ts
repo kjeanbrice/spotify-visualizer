@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, OnInit} from '@angular/core';
+import {Component, AfterViewInit, OnInit, AfterViewChecked} from '@angular/core';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
 import {Router} from '@angular/router';
 import * as Feather from 'feather-icons';
@@ -8,7 +8,7 @@ import * as Feather from 'feather-icons';
     styleUrls: ['./recentsongs.component.css'],
     templateUrl: './recentsongs.component.html'
 })
-export class RecentSongsComponent implements AfterViewInit, OnInit {
+export class RecentSongsComponent implements AfterViewInit, OnInit, AfterViewChecked {
     menuOptions: object = {
         profile: '',
         playlists: '',
@@ -34,8 +34,12 @@ export class RecentSongsComponent implements AfterViewInit, OnInit {
 
     ngOnInit() {
         this.getRecentlyPlayedTracks(null, {limit: 30}, 'tracks', []);
+        Feather.replace();
     }
 
+    ngAfterViewChecked(): void {
+        Feather.replace();
+    }
 
 
     getRecentlyPlayedTracks(addr: string, opts: any, type: string, results: any[]) {

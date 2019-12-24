@@ -17,6 +17,9 @@
             <li *ngFor="let track of topTracksData">
                 <a (click)="onClickTrack(track.trackID)" class="playlist-song" href="javascript:void(0);">
                     <span class="playlist-image">
+                        <div class="item-overlay">
+                            <i class="icon-size-link" data-feather="info"></i>
+                        </div>
                         <img src="{{track.albumImage}}"
                             class="avatar-brand" alt="">
                     </span>

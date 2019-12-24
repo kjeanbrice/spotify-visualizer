@@ -1,4 +1,4 @@
-import {Component, AfterViewInit} from '@angular/core';
+import {Component, AfterViewInit, AfterViewChecked} from '@angular/core';
 import * as Feather from 'feather-icons';
 import {} from '@angular/common';
 
@@ -7,7 +7,7 @@ import {} from '@angular/common';
     styleUrls: ['./playlists.component.css'],
     templateUrl: './playlists.component.html'
 })
-export class PlaylistsComponent implements AfterViewInit {
+export class PlaylistsComponent implements AfterViewInit, AfterViewChecked {
     menuOptions: object = {
         profile: '',
         playlists: 'active',
@@ -17,6 +17,10 @@ export class PlaylistsComponent implements AfterViewInit {
     };
     constructor() {}
     ngAfterViewInit() {
+        Feather.replace();
+    }
+
+    ngAfterViewChecked(): void {
         Feather.replace();
     }
 }

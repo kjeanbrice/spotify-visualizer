@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, OnInit} from '@angular/core';
+import {Component, AfterViewInit, OnInit, AfterViewChecked} from '@angular/core';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
 import {Router} from '@angular/router';
 import * as Feather from 'feather-icons';
@@ -9,7 +9,7 @@ import * as Feather from 'feather-icons';
     templateUrl: './toptracks.component.html',
     styleUrls: ['./toptracks.component.css']
 })
-export class TopTracksComponent implements AfterViewInit, OnInit {
+export class TopTracksComponent implements AfterViewInit, OnInit, AfterViewChecked {
     menuOptions: object = {
         profile: '',
         playlists: '',
@@ -41,6 +41,10 @@ export class TopTracksComponent implements AfterViewInit, OnInit {
     }
 
     ngAfterViewInit() {
+        Feather.replace();
+    }
+
+    ngAfterViewChecked(): void {
         Feather.replace();
     }
 

@@ -6,6 +6,11 @@
     min-height: 100vh;
 }
 
+.icon-size-link{
+    width:6rem;
+    height:6rem;
+    color:gray;
+}
 
 .title-section{
     font-size:1.9rem;

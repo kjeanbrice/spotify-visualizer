@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked } from '@angular/core';
 import * as Feather from 'feather-icons';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
 import {Router} from '@angular/router';
@@ -9,7 +9,7 @@ declare var jQuery: any;
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit, AfterViewInit {
+export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked {
     menuOptions: object = {
         profile: 'active',
         playlists: '',
@@ -51,6 +51,10 @@ export class ProfileComponent implements OnInit, AfterViewInit {
        this.getTopTracks();
        this.getTopArtists();
 
+    }
+
+    ngAfterViewChecked(): void {
+        Feather.replace();
     }
 
     getProfileData() {

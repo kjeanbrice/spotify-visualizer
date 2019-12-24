@@ -73,6 +73,9 @@
                         <li *ngFor="let artist of topArtistsData">
                             <a (click) = "onClickArtist(artist.artistID)" class="playlist-song">
                                 <span class="playlist-image">
+                                    <div class="item-overlay">
+                                        <i class="icon-size-link" data-feather="info"></i>
+                                    </div>
                                     <img src="{{artist.artistImage}}"
                                         class="avatar-brand-artist" alt="Image Error">
                                 </span>
@@ -107,6 +110,9 @@
                                 <li *ngFor="let track of toptracksData">
                                     <a (click) = "onClickTrack(track.trackID)" class="playlist-song" href="javascript:void(0);">
                                         <span class="playlist-image">
+                                            <div class="item-overlay">
+                                                <i class="icon-size-link" data-feather="info"></i>
+                                            </div>
                                             <img src="{{track.albumImage}}"
                                                 class="avatar-brand" alt="">
                                         </span>
