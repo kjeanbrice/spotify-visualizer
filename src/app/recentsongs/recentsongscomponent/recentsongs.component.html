@@ -1,49 +1,32 @@
 <app-menu [menuOptions]='menuOptions'></app-menu>
 <div class="recentsongs-section">
+    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
     <div class="title-section">
         <span>Recently Played Tracks</span>
     </div>
     <div>
         <ul class="playlist-songs-section">
             <!--grid column-->
-            <li>
-                <a class="playlist-song" href="javscript(void);">
+            <li *ngFor="let track of recentlyPlayedTracksData">
+                <a class="playlist-song" (click)="onClickTrack(track.trackID)" href="javscript:(void);">
                     <span class="playlist-image">
-                        <img src="https://i.scdn.co/image/ab67616d00004851f1d4fe9b36aa7be708ea44ea"
+                        <img src="{{track.albumImage}}"
                             class="avatar-brand" alt="">
                     </span>
                     <div class="playlist-data">
                         <div class="playlist-data-des">
-                            <span class="bg-white-spotify playlist-title">Cross Me (feat. Chance the Rapper
-                                & PnB Rock)hjkhkjhkhkjhkhhkfdkjkljlklk</span>
+                            <span class="bg-white-spotify playlist-title">{{track.trackName}}</span>
                             
-                            <div class="playlist-des-wrapper bg-gray-spotify"><span class="playlist-des">Cross Me (feat. Chance the
-                                    Rapper & PnB Rock)jkjjkjhkjh fdsfadsfasdfasfas</span>
+                            <div class="playlist-des-wrapper bg-gray-spotify"><span class="playlist-des">{{track.artists}}&nbsp;&#183;&nbsp;{{track.albumName}}</span>
                             </div>
                         </div>
-                        <span class="bg-gray-spotify duration">3:28</span>
+                        <span class="bg-gray-spotify duration">{{track.duration}}</span>
                     </div>
                 </a>
             </li>
             <li>
-                    <a class="playlist-song">
-                        <span class="playlist-image">
-                            <img src="https://i.scdn.co/image/ab67616d00004851f1d4fe9b36aa7be708ea44ea"
-                                class="avatar-brand" alt="">
-                        </span>
-                        <div class="playlist-data">
-                            <div class="playlist-data-des">
-                                <span class="bg-white-spotify playlist-title">Cross Me (feat. Chance the Rapper
-                                    & PnB Rock)hjkhkjhkhkjhkhhkfdkjkljlklk</span>
-                                
-                                <div class="playlist-des-wrapper bg-gray-spotify"><span class="playlist-des">Cross Me (feat. Chance the
-                                        Rapper & PnB Rock)jkjjkjhkjh fdsfadsfasdfasfas</span>
-                                </div>
-                            </div>
-                            <span class="bg-gray-spotify duration">3:28</span>
-                        </div>
-                    </a>
-                </li>
+
+            </li>
                 
 
         </ul>

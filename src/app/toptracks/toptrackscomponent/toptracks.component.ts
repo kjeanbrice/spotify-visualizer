@@ -25,11 +25,16 @@ export class TopTracksComponent implements AfterViewInit, OnInit {
     };
 
     currentSearchFilter: string;
+    loadingStatus: string;
+    map: Map<string, number>;
 
     topTracksData: any[];
     constructor(private spotifyService: SpotifyService, private router: Router) {
         this.topTracksData = [];
         this.currentSearchFilter = 'long_term';
+        this.loadingStatus = '';
+        this.map = new Map();
+        this.map.set('getTopTracks', 0);
     }
     ngOnInit() {
         this.getTopTracks(null, {limit: 30, time_range: this.currentSearchFilter}, 'tracks', []);
@@ -98,9 +103,18 @@ export class TopTracksComponent implements AfterViewInit, OnInit {
             (err) => {
                 console.log('Profile: Unable to load top tracks');
             }
+        ).add(() => {
+            this.map.delete('getTopTracks');
+            this.checkLoadingStatus();
+        }
         );
     }
 
+    checkLoadingStatus() {
+        if (this.map.size === 0) {
+            this.loadingStatus = 'hide-content';
+        }
+    }
     onClickTrack(id: string) {
         this.router.navigate(['/track'], {queryParams: {
             id

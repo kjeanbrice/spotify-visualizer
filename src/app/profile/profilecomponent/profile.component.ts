@@ -18,9 +18,11 @@ export class ProfileComponent implements OnInit, AfterViewInit {
         recentsongs: ''
     };
 
+    loadingStatus: string;
     profileData: any;
     toptracksData: any[];
     topArtistsData: any[];
+    map: Map<string, number>;
 
     constructor(private spotifyService: SpotifyService, private router: Router) {
         this.profileData = {
@@ -33,6 +35,14 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
         this.toptracksData = [];
         this.topArtistsData = [];
+        this.map = new Map();
+        this.loadingStatus = '';
+
+        this.map.set('getFollowedArtist', 0);
+        this.map.set('getProfileData', 0);
+        this.map.set('getUserPlaylists', 0);
+        this.map.set('getTopTracks', 0);
+        this.map.set('getTopArtists', 0);
     }
     ngOnInit() {
        this.getProfileData();
@@ -55,8 +65,11 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             },
             err => {
                 console.log('Profile:Unable to load profile data.');
-            }
-        );
+            },
+        ).add( () => {
+            this.map.delete('getProfileData');
+            this.checkLoadingStatus();
+        });
     }
 
     getFollowedArtist() {
@@ -67,7 +80,10 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             (err) => {
                 console.log('Profile: Unable to load following data.');
             }
-        );
+        ).add(() => {
+            this.map.delete('getFollowedArtist');
+            this.checkLoadingStatus();
+        });
     }
 
     getUserPlaylists() {
@@ -78,7 +94,10 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             (err) => {
                 console.log('Profile: Unable to load playlist data');
             }
-        );
+        ).add(() => {
+            this.map.delete('getUserPlaylists');
+            this.checkLoadingStatus();
+        });
     }
 
 
@@ -102,7 +121,10 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             (err) => {
                 console.log('Profile: Unable to load top tracks');
             }
-        );
+        ).add(() => {
+            this.map.delete('getTopTracks');
+            this.checkLoadingStatus();
+        });
     }
 
 
@@ -123,7 +145,16 @@ export class ProfileComponent implements OnInit, AfterViewInit {
             (err) => {
                 console.log('Profile: Unable to load top artist');
             }
-        );
+        ).add(() => {
+            this.map.delete('getTopArtists');
+            this.checkLoadingStatus();
+        });
+    }
+
+    checkLoadingStatus() {
+        if (this.map.size === 0) {
+            this.loadingStatus = 'hide-content';
+        }
     }
 
     onClickTrack(id: string) {

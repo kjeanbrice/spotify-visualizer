@@ -131,7 +131,7 @@ export class SpotifyService {
         return results;
     }
 
-    public getUsersRecentlyPlayedTracks(opts: any) {
+    public getUsersRecentlyPlayedTracks(link: string, opts: any): Observable<any> {
         if (opts === undefined || opts === null) {
             opts = {};
         }
@@ -139,12 +139,16 @@ export class SpotifyService {
         const token = this.getAccessToken();
         const options = {
             headers: new HttpHeaders({
-                Authorization: 'Bearer' + token
+                Authorization: 'Bearer ' + token
             }),
             params: opts
         };
 
-        const addr = 'https://api.spotify.com/v1/me/player/recently-played';
+        let addr = 'https://api.spotify.com/v1/me/player/recently-played';
+        if (link !== null) {
+            addr = link;
+        }
+
         const results = this.http.get(addr, options).pipe(
             map(response => {
                 return response;

@@ -1,6 +1,8 @@
 <app-menu [menuOptions]="menuOptions"></app-menu>
 <div class="profile-section">
+    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
     <div class="container-fluid">
+        <div class="lds-facebook"><div></div><div></div><div></div></div>
 
         <div class="user-section">
             <div class="row">
@@ -10,7 +12,7 @@
 
                         </div>
                         <div>
-                            <span class="profile-username">{{this.profileData.displayName === null ? 'Loading...' : this.profileData.displayName}}</span>
+                            <span class="profile-username">{{this.profileData.displayName === null ? ' ' : this.profileData.displayName}}</span>
                         </div>
                     </div>
                 </div>
