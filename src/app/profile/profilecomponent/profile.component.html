@@ -1,17 +1,17 @@
 <app-menu [menuOptions]="menuOptions"></app-menu>
 <div class="profile-section">
     <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
-    <div class="container-fluid">
+    <div class="">
         <div class="lds-facebook"><div></div><div></div><div></div></div>
 
         <div class="user-section">
-            <div class="row">
-                <div class="col-md-12 col-lg-12 col-sm-12">
+            <div>
+                <div>
                     <div class="avatar-section">
                         <div *ngIf = "this.profileData.profileImage == null; then defaultAvatar else userAvatar">
 
                         </div>
-                        <div>
+                        <div class="avatar-display-name">
                             <span class="profile-username">{{this.profileData.displayName === null ? ' ' : this.profileData.displayName}}</span>
                         </div>
                     </div>

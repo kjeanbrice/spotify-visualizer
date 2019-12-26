@@ -116,15 +116,13 @@ ul.playlist-songs-section{
     margin-top: 6%;
 }
 
-
-
 span.playlist-des{
     font-size:1rem;
     font-weight:300;
 }
 
 ul.playlist-songs-section > li{
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 ul.playlist-songs-section > li:last-child{
@@ -196,6 +194,9 @@ div.playlist-data > span.duration{
 
 
 .avatar-section{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     -moz-user-select: none; /* Firefox */
       -ms-user-select: none; /* Internet Explorer */
@@ -204,10 +205,16 @@ div.playlist-data > span.duration{
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
+.avatar-display-name{
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom:10px;
+}
 .avatar.custom-avatar{
     height:13rem;
     width:13rem;
     padding: 0;
+    margin: 0 auto;
 }
 
 .profile-username{
@@ -260,7 +267,7 @@ div.playlist-data > span.duration{
     position:relative;
     color: #fff;
     width: calc(100% - 100px);
-    padding: 10% 2%;
+    padding: 10% 5%;
     margin-left: 100px;
     min-height: 100vh;
 }
