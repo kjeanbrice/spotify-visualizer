@@ -4,11 +4,16 @@
     padding: 10% 6%;
     margin-left: 100px;
     min-height: 100vh;
+    position:relative;
 }
 
 .playlist-container{
     display:flex;
     flex-direction: row;
+}
+
+.playlist-image-overlay{
+    
 }
 
 .playlist-left{
@@ -167,7 +172,7 @@ a:hover{
     font-weight: 600
 }
 
-.playlist-title-container > div{
+.playlist-title-container > div:last-child{
     margin-top:5%;
     margin-bottom:5%
 }
@@ -263,6 +268,8 @@ a:hover{
         margin:0 auto;
         width:60%;
     }
+
+    
 
   
 

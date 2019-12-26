@@ -102,8 +102,93 @@ export class SpotifyService {
         return results;
     }
 
+    public getPlaylistImage(playlistid: string): Observable<any> {
 
-    public getUsersPlaylist(opts: any): Observable<any> {
+        const token = this.getAccessToken();
+
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            })
+        };
+
+
+        const addr = 'https://api.spotify.com/v1/playlists/' + playlistid + '/images';
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+    public getPlaylist(playlistid: string, opts: any): Observable<any> {
+        if (opts === null || opts === undefined) {
+            opts = {};
+        }
+
+        const token = this.getAccessToken();
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            params: opts
+        };
+
+
+        const addr = 'https://api.spotify.com/v1/playlists/' + playlistid;
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+
+    }
+
+
+
+    public getPlaylistTracks(link: string, playlistid: string, opts: any): Observable<any> {
+        if (opts === null || opts === undefined) {
+            opts = {};
+        }
+
+        const token = this.getAccessToken();
+
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            params : opts
+        };
+
+        let addr = 'https://api.spotify.com/v1/playlists/' + playlistid + '/tracks';
+        if (link !== null) {
+            addr = link;
+        }
+
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+
+    public getUsersPlaylist(link: string, opts: any): Observable<any> {
         if (opts === undefined || opts === null) {
             opts = {};
         }
@@ -117,8 +202,10 @@ export class SpotifyService {
             params: opts
         };
 
-        const addr = 'https://api.spotify.com/v1/me/playlists';
-
+        let addr = 'https://api.spotify.com/v1/me/playlists';
+        if (link !== null) {
+            addr = link;
+        }
         const results = this.http.get(addr, options).pipe(
             map(response => {
                 return response;
@@ -180,7 +267,6 @@ export class SpotifyService {
         duration = duration % 3600;
 
         const minutes = Math.floor(duration / 60);
-        console.log(minutes + ':' + duration);
         const seconds = Math.floor(duration % 60);
 
 

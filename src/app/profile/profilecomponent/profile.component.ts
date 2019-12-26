@@ -91,7 +91,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
     }
 
     getUserPlaylists() {
-        this.spotifyService.getUsersPlaylist(null).subscribe(
+        this.spotifyService.getUsersPlaylist(null, null).subscribe(
             (res) => {
                 this.profileData.playlistCount = res.total;
             },

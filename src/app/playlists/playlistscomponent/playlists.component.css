@@ -4,6 +4,7 @@
     padding: 10% 5%;
     margin-left: 100px;
     min-height: 100vh;
+    position:relative;
 }
 
 .icon-size-link{
@@ -19,7 +20,7 @@
 
 .playlists-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap:50px;
     margin-top: 10%;
 }
@@ -79,7 +80,7 @@ a{
         width: 100%;
         margin-bottom:25%;
         min-height: initial;
-        max-width:100vh;    
+        /*max-width:100vh;*/  
     }
 
     .title-section{
