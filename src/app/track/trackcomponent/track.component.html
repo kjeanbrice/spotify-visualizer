@@ -1,18 +1,21 @@
 <app-menu [menuOptions] = "menuOptions"></app-menu>
 <div class="track-section">
+    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
     <main class="track-container">
         <div class="track-left">
             <img class="track-image-left"
-            src="https://i.scdn.co/image/ab67616d0000b2732a92be045b40fec450358016" />
+            src="{{trackData.albumImage}}" />
         </div>
         <div class="track-right">
             <div class="track-details">
-                <h1 class="bg-white-spotify">Granted</h1>
-                <h2 class="bg-gray-spotify">Josh Groban</h2>
-                <h3 class="bg-gray-spotify">Bridges Deluxe (Unmapped)</h3>
+                <h1 class="bg-white-spotify">{{trackData.trackName}}</h1>
+                <h2 class="bg-gray-spotify">{{trackData.artists}}</h2>
+                <h3 class="bg-gray-spotify"><a class="bg-gray-spotify" href="{{trackData.albumLink}}">{{trackData.album}}</a></h3>
             </div>
             <div class="track-button">
-                <span class="top-button">Play on Spotify</span>
+                <a href="{{trackData.playLink}}">
+                    <span class="top-button">Play on Spotify</span>
+                </a>
             </div>
         </div>
     </main>

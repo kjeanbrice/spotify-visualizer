@@ -175,18 +175,31 @@ export class SpotifyService {
     }
 
     public parseDurationFromMs(duration: number): string {
-        duration = Math.floor(duration / 1000);
-        return Math.floor(duration / 60)  + ':' + (duration % 60);
+        duration = duration / 1000;
+        const hours = Math.floor(duration / 3600);
+        duration = duration % 3600;
+
+        const minutes = Math.floor(duration / 60);
+        console.log(minutes + ':' + duration);
+        const seconds = Math.floor(duration % 60);
+
+
+
+        let result = '';
+        result += (hours === 0) ? '' : hours + ':';
+        result += (hours !== 0 && minutes < 10) ? ('0' + minutes + ':') : minutes + ':';
+        result += (seconds < 10) ? ('0' + seconds) : seconds;
+        return result;
     }
 
 
 
-    public getTrack(trackid: string) {
+    public getTrack(trackid: string): Observable<any> {
         const token = this.getAccessToken();
 
         const options = {
             headers: new HttpHeaders({
-                Authorization: 'Bearer' + token
+                Authorization: 'Bearer ' + token
             })
         };
 
