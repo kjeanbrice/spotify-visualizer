@@ -13,6 +13,9 @@ import {TopTracksModule} from './toptracks/toptracks.module';
 import { AppComponent } from './app.component';
 import {PlaylistViewerModule} from './playlistviewer/playlistviewer.module';
 import {TrackModule} from './track/track.module';
+import {TopArtistsModule} from './topartists/topartists.module';
+import {ArtistModule} from './artist/artist.module';
+import {RecommendModule} from './recommendations/recommend.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import {TrackModule} from './track/track.module';
     RecentSongsModule,
     PlaylistsModule,
     PlaylistViewerModule,
-    TrackModule
+    TrackModule,
+    TopArtistsModule,
+    ArtistModule,
+    RecommendModule
   ],
   providers: [],
   bootstrap: [AppComponent]

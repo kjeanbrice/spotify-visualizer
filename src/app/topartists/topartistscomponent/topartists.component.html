@@ -2,20 +2,19 @@
 <div class="playlists-section">
     <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
     <div class="title-section">
-        Your Playlists
+        Your Top Artists
     </div>
     <div class="playlists-grid">
-        <div class="playlist-item" *ngFor="let playlist of playlistData">
-            <a href="javascript:void(0);" (click)="onClickPlaylist(playlist.playlistID)" class="playlist-data">
+        <div class="playlist-item" *ngFor="let artist of topArtistsData">
+            <a href="javascript:void(0);" (click)="onClickArtist(artist.id)" class="playlist-data">
                 <div class="playlist-image">
                     <div class="item-overlay">
                         <i class="icon-size-link" data-feather="info"></i>
                     </div>
-                    <img src ="{{playlist.playlistImage}}"/>   
+                    <img class="image-settings" src ="{{artist.image}}" alt="Image not found"/>   
                 </div>  
                 <div class="playlist-content">
-                    <span class="playlist-title bg-white-spotify">{{playlist.playlistName}}</span>
-                    <span class="playlist-count bg-gray-spotify">{{playlist.totalTracks}} Tracks</span>
+                    <span class="playlist-title bg-white-spotify">{{artist.name}}</span>
                 </div>             
             </a>         
         </div> 

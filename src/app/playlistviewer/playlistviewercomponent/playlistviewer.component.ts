@@ -80,7 +80,6 @@ export class PlaylistViewerComponent implements AfterViewInit, OnInit, AfterView
 
                 if (res.next === null) {
                     this.playlistTracks = data;
-                    console.log(JSON.stringify(this.playlistTracks));
                     return;
                 }
                 this.getPlaylistTracks(res.next, playlistid, null, data);
