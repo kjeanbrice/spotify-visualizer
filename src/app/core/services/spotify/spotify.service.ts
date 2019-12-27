@@ -326,6 +326,84 @@ export class SpotifyService {
         return results;
     }
 
+    public getArtist(artistid: string): Observable<any> {
+        const token = this.getAccessToken();
+
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            })
+        };
+
+        const addr = 'https://api.spotify.com/v1/artists/' + artistid;
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+    public followArtistsOrUsers(ids: string[], type: string): Observable<any> {
+        const token = this.getAccessToken();
+
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            body: {
+                ids
+            }
+        };
+
+
+        const addr = 'https://api.spotify.com/v1/me/following';
+
+        const results = this.http.put(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+
+    public isFollowingArtistsOrUsers(ids: string[], type: string): Observable<any> {
+        const token = this.getAccessToken();
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            params: {
+                ids
+            }
+        };
+
+
+        const addr = 'https://api.spotify.com/v1/me/following/contains';
+
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+
+
     public refreshAccessToken(): Observable<any> {
         const token = this.getAccessToken();
         if (token === null || token === undefined) {

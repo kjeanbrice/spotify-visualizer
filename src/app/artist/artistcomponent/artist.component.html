@@ -1,1 +1,40 @@
 <app-menu [menuOptions]='menuOptions'></app-menu>
+<div class="artist-section noselect">
+    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <div class="artist-grid">
+        <div class="artist-des-section">
+            <div>
+                <img class="artist-image" src="{{artistData.image}}"
+                    alt="Image not found" />
+            </div>
+            <div>
+                <span class='artist-name'>{{artistData.name}}</span>
+            </div>
+        </div>
+        <div class="stats-section">
+            <div>
+                <span class="stats-des">{{artistData.followerCount}}</span>
+                <span class="atitle">Followers</span>
+            </div>
+            <div>
+                <div> 
+                    <span *ngFor="let genre of artistData.genres" class="stats-des">{{genre}}</span>
+                    <span class="stats-des"></span>
+                </div>
+                <span class="atitle">Genres</span>
+            </div>
+            <div>
+                <span class="stats-des">{{artistData.popularity}}%</span>
+                <span class="atitle">Popularity</span>
+            </div>
+        </div>
+        <div class="follow-section">
+            <div class="top-button">
+                <span>Follow</span>
+            </div>
+            <div class="disabled-btn hide-content" >
+                <span>Following</span>
+            </div>
+        </div>
+    </div>
+</div>
