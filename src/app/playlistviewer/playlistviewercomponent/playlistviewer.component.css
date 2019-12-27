@@ -22,30 +22,9 @@
     flex-basis:30%;
 }
 
-.top-button{
-    text-align: center;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: .85rem;
-    font-weight: 600;
-    border: 1px solid rgb(29, 185, 84);
-    background-color: rgb(29, 185, 84);
-    cursor: pointer;
-    border-radius: 16px;
-    padding: 7px 20px;
-    -webkit-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
-    -moz-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
-    -o-transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
-    transition: background-color .5s ease-in-out, color .5s ease-in-out, border .5s ease-in-out;
-   
-    
-}
 
-.top-button:hover{
-    background-color:#fff;
-    color:black;
-    border: 1px solid black;
-}
+
+
 
 .playlist-track-container{
     display:flex;

@@ -29,11 +29,11 @@
             </div>
         </div>
         <div class="follow-section">
-            <div class="top-button">
+            <div class="top-button {{followBtnSettings.follow}}" (click) = "onFollowArtist(artistData.id)">
                 <span>Follow</span>
             </div>
-            <div class="disabled-btn hide-content" >
-                <span>Following</span>
+            <div class="unfollow-btn {{followBtnSettings.following}}" (click) = "onUnfollowArtist(artistData.id)" >
+                <span>Unfollow</span>
             </div>
         </div>
     </div>

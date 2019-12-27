@@ -3,6 +3,7 @@ import { SpotifyService } from '../../core/services/spotify/spotify.service';
 import { ActivatedRoute } from '@angular/router';
 import * as Feather from 'feather-icons';
 
+
 @Component({
     selector: 'app-artist',
     templateUrl: './artist.component.html',
@@ -12,6 +13,11 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
 
     menuOptions = {
         topartists: 'active'
+    };
+
+    followBtnSettings = {
+        follow: '',
+        following: 'hide-content'
     };
 
     loadingStatus: string;
@@ -41,12 +47,14 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
             (res) => {
                 console.log(JSON.stringify(res));
                 this.artistData = {
-                    followerCount: res.followers.total,
+                    followerCount: this.spotifyService.formatNumber(res.followers.total),
                     image: res.images[0].url,
                     name: res.name,
                     popularity: res.popularity,
-                    genres: res.genres
+                    genres: res.genres,
+                    id: res.id
                 };
+                console.log(JSON.stringify(this.artistData));
             },
             (err) => {
                 console.log('Artist: cannot load artist data');
@@ -65,7 +73,13 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
         data.push(artistid);
         this.spotifyService.isFollowingArtistsOrUsers(data, 'artist').subscribe(
             (res) => {
-                console.log('T:' + JSON.stringify(res));
+                if (res[0] === true) {
+                    this.followBtnSettings.follow = 'hide-content';
+                    this.followBtnSettings.following = '';
+                } else {
+                    this.followBtnSettings.follow = '';
+                    this.followBtnSettings.following = 'hide-content';
+                }
             },
             (err) => {
                 console.log('Artist: unable to determine if user if following artist');
@@ -75,6 +89,38 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
             this.checkLoadingStatus();
         });
     }
+
+    public onFollowArtist(artistid: string) {
+        const data = [];
+        data.push(artistid);
+        this.spotifyService.followArtistsOrUsers(data, 'artist').subscribe(
+            (res) => {
+            },
+            (err) => {
+                console.log('Follow: unable to follow artist.');
+            }
+        ).add(() => {
+            this.isFollowingArtist(artistid);
+        }
+        );
+    }
+
+    public onUnfollowArtist(artistid: string) {
+        const data = [];
+        data.push(artistid);
+
+        this.spotifyService.unFollowArtistsOrUsers(data, 'artist').subscribe(
+            (res) => {
+            },
+            (err) => {
+                console.log('Unfollow: unable to unfollow artist.');
+            }
+        ).add(() => {
+            this.isFollowingArtist(artistid);
+        });
+    }
+
+
 
 
 

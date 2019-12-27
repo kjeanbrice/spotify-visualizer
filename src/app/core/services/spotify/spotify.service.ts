@@ -350,20 +350,24 @@ export class SpotifyService {
 
     public followArtistsOrUsers(ids: string[], type: string): Observable<any> {
         const token = this.getAccessToken();
-
+        console.log(token);
         const options = {
             headers: new HttpHeaders({
                 Authorization: 'Bearer ' + token
             }),
-            body: {
-                ids
+            params: {
+                type
             }
+        };
+
+        const body = {
+            ids
         };
 
 
         const addr = 'https://api.spotify.com/v1/me/following';
 
-        const results = this.http.put(addr, options).pipe(
+        const results = this.http.put(addr, body, options).pipe(
             map((res) => {
                 return res;
             }),
@@ -376,6 +380,35 @@ export class SpotifyService {
     }
 
 
+    public unFollowArtistsOrUsers(ids: string[], type: string): Observable<any> {
+        const token = this.getAccessToken();
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            params: {
+                type
+            },
+            body: {
+                ids
+            }
+        };
+
+        const addr = 'https://api.spotify.com/v1/me/following';
+        const results = this.http.delete(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
+
+
     public isFollowingArtistsOrUsers(ids: string[], type: string): Observable<any> {
         const token = this.getAccessToken();
         const options = {
@@ -383,6 +416,7 @@ export class SpotifyService {
                 Authorization: 'Bearer ' + token
             }),
             params: {
+                type,
                 ids
             }
         };
@@ -400,6 +434,24 @@ export class SpotifyService {
         );
 
         return results;
+    }
+
+
+    public formatNumber(num: number): string {
+
+        let result = '';
+        let count = 0;
+        while (num !== 0) {
+            if (count % 3 === 0 && count !== 0) {
+                result = ',' + result;
+            }
+            result = num % 10 + result;
+            num = Math.floor(num / 10);
+            console.log(num);
+            count++;
+        }
+
+        return result;
     }
 
 
