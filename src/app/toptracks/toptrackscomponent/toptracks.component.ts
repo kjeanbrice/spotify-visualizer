@@ -10,7 +10,7 @@ import * as Feather from 'feather-icons';
     styleUrls: ['./toptracks.component.css']
 })
 export class TopTracksComponent implements AfterViewInit, OnInit, AfterViewChecked {
-    menuOptions: object = {
+    menuOptions: any = {
         profile: '',
         playlists: '',
         topartists: '',
@@ -18,7 +18,7 @@ export class TopTracksComponent implements AfterViewInit, OnInit, AfterViewCheck
         recentsongs: ''
     };
 
-    searchOptions: object;
+    searchOptions: any;
     currentSearchFilter: string;
     loadingStatus: string;
     map: Map<string, number>;
