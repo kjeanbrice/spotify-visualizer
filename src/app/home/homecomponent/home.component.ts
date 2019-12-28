@@ -1,7 +1,7 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as Feather from 'feather-icons';
-import {SpotifyService} from '../../core/services/spotify/spotify.service';
+import { SpotifyService } from '../../core/services/spotify/spotify.service';
 
 @Component({
     selector: 'app-home',
@@ -9,7 +9,13 @@ import {SpotifyService} from '../../core/services/spotify/spotify.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-    constructor(private route: ActivatedRoute, private router: Router , private spotifyService: SpotifyService) {
+
+    loadingStatus: string;
+    map: Map<string, number>;
+    constructor(private route: ActivatedRoute, private router: Router, private spotifyService: SpotifyService) {
+        this.map = new Map<string, number>();
+        this.map.set('authenticate', 0);
+        this.loadingStatus = ' ';
     }
 
     ngOnInit(): void {
@@ -17,8 +23,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.spotifyService.authenticate(token).subscribe(
             (data) => {
                 this.router.navigate(['/profile']);
+                this.map.delete('authenticate');
+                setTimeout(() => {
+                    this.checkLoadingStatus();
+                }, 5000);
             },
             (err) => {
+                this.map.delete('authenticate');
+                this.checkLoadingStatus();
             }
         );
     }
@@ -31,6 +43,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     onLogin() {
         window.location.href = window.location.href.includes('localhost') ?
-        'http://localhost:8888/login' : 'https://spotifyvisualizer.herokuapp.com/login';
+            'http://localhost:8888/login' : 'https://spotifyvisualizer.herokuapp.com/login';
+    }
+
+    checkLoadingStatus() {
+        if (this.map.size === 0) {
+            this.loadingStatus = 'hide-content';
+        }
     }
 }
