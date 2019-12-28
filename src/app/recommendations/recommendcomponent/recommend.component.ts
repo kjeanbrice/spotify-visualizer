@@ -68,6 +68,9 @@ export class RecommendComponent implements OnInit, AfterViewChecked {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
                 for (let i = 0; i < item.length; i++) {
+                    if (item[i].track === null) {
+                        continue;
+                    }
                     const track = {
                         duration: this.spotifyService.parseDurationFromMs(parseInt(item[i].track.duration_ms, 10)),
                         trackName: item[i].track.name,
@@ -110,6 +113,9 @@ export class RecommendComponent implements OnInit, AfterViewChecked {
                 const data = [];
                 // tslint:disable-next-line:prefer-for-of
                 for (let i = 0; i < items.length; i++) {
+                    if (items[i] === null) {
+                        continue;
+                    }
                     const track = {
                         duration: this.spotifyService.parseDurationFromMs(parseInt(items[i].duration_ms, 10)),
                         trackName: items[i].name,
