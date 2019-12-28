@@ -21,7 +21,6 @@ ul.side-nav-options > li{
 ul.side-nav-options > li:first-child{
   flex-basis:15%; 
   display:flex;
-  margin-top:10%; 
 }
 
 li{
@@ -83,9 +82,11 @@ ul.side-nav-options > li:hover{
 
 
 
+
+
 .avatar-brand{
-    width:3.5rem;
-    height:3.5rem;
+    width:3.2rem;
+    height:3.2rem;
     margin:auto;
 }
 
