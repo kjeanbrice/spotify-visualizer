@@ -69,6 +69,9 @@ export class PlaylistViewerComponent implements AfterViewInit, OnInit, AfterView
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
                 for (let i = 0; i < item.length; i++) {
+                    if (item[i].track === null) {
+                        continue;
+                    }
                     const track = {
                         duration: this.spotifyService.parseDurationFromMs(parseInt(item[i].track.duration_ms, 10)),
                         trackName: item[i].track.name,
