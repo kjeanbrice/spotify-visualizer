@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {SpotifyService} from '../../core/services/spotify/spotify.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MenuComponent implements OnInit {
     @Input() menuOptions: any;
 
-    constructor() {
+    constructor(private spotifyService: SpotifyService, private router: Router) {
         if (this.menuOptions === undefined || this.menuOptions === null) {
             this.menuOptions = {
                 profile: '',
@@ -22,4 +24,9 @@ export class MenuComponent implements OnInit {
     }
 
     ngOnInit(): void {}
+
+    onLogout(): void {
+        this.spotifyService.deleteAccessToken();
+        this.router.navigate(['']);
+    }
 }

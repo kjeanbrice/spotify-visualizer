@@ -49,7 +49,6 @@ export class TopArtistsComponent implements OnInit, AfterViewChecked {
 
                 if (res.next === null) {
                     this.topArtistsData = results;
-                    console.log('R:' + JSON.stringify(this.topArtistsData));
                 } else {
                     this.getTopArtists(res.next, null, 'artists', results);
                 }

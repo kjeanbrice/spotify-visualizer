@@ -19,7 +19,13 @@ ul.side-nav-options > li{
 }
 
 ul.side-nav-options > li:first-child{
-  flex-basis:15%;  
+  flex-basis:15%; 
+  display:flex;
+  margin-top:10%; 
+}
+
+li{
+  cursor:pointer;
 }
 
 .icon-section{
@@ -78,8 +84,9 @@ ul.side-nav-options > li:hover{
 
 
 .avatar-brand{
-    width:5.9rem;
-    height:5.9rem;
+    width:3.5rem;
+    height:3.5rem;
+    margin:auto;
 }
 
 .icon-des{

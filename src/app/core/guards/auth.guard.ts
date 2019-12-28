@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return this.spotifyService.getUserProfile().pipe(
         map((res) => {
-            console.log('Hello from AuthGuard: true');
             return true;
         }),
         catchError((err) => {

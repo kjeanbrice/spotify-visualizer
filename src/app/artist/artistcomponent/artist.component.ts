@@ -45,7 +45,6 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
     public getArtist(artistid: string) {
         this.spotifyService.getArtist(artistid).subscribe(
             (res) => {
-                console.log(JSON.stringify(res));
                 this.artistData = {
                     followerCount: this.spotifyService.formatNumber(res.followers.total),
                     image: res.images[0].url,
@@ -54,7 +53,6 @@ export class ArtistComponent implements OnInit, AfterViewChecked {
                     genres: res.genres,
                     id: res.id
                 };
-                console.log(JSON.stringify(this.artistData));
             },
             (err) => {
                 console.log('Artist: cannot load artist data');

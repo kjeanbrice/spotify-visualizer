@@ -14,6 +14,11 @@ html{
     margin: 0;
 }
 
+*:focus {
+  outline: 0;
+  outline: none;
+}
+
 .playlist-image{
   position:relative;
 }
@@ -93,6 +98,14 @@ html{
   border-radius: 50%;
   background: rgb(30, 215, 96);
   animation: lds-grid 1.2s linear infinite;
+}
+
+.no-select{
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+-khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+-webkit-user-select: none; /* Chrome, Safari, and Opera */
+-webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 .lds-grid div:nth-child(1) {
   top: 8px;

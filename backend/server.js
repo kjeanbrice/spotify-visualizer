@@ -44,7 +44,6 @@ app.get('/callback', function (req, res) {
         var access_token = body.access_token;
 
         let uri = process.env.FRONTEND_URI || 'http://localhost:8888/';
-        console.log(`uri:` + uri + ' accesstoken:' + body.access_token);
         res.redirect(uri + '?access_token=' + access_token);
     });
 });

@@ -20,6 +20,11 @@ export class SpotifyService {
         window.localStorage.setItem(this.ACCESS_TOKEN, token);
     }
 
+    public deleteAccessToken(): void {
+        window.localStorage.removeItem(this.TOKEN_TIMESTAMP);
+        window.localStorage.removeItem(this.ACCESS_TOKEN);
+    }
+
 
     public getAccessToken(): string {
         return window.localStorage.getItem(this.ACCESS_TOKEN);
@@ -350,7 +355,6 @@ export class SpotifyService {
 
     public followArtistsOrUsers(ids: string[], type: string): Observable<any> {
         const token = this.getAccessToken();
-        console.log(token);
         const options = {
             headers: new HttpHeaders({
                 Authorization: 'Bearer ' + token
@@ -501,7 +505,6 @@ export class SpotifyService {
             }
             result = num % 10 + result;
             num = Math.floor(num / 10);
-            console.log(num);
             count++;
         }
 

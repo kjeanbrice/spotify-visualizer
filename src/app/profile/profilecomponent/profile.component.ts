@@ -155,6 +155,10 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
         });
     }
 
+    ngAfterViewInit() {
+        Feather.replace();
+    }
+
     checkLoadingStatus() {
         if (this.map.size === 0) {
             this.loadingStatus = 'hide-content';
@@ -167,7 +171,9 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
         }});
     }
 
-    ngAfterViewInit() {
-        Feather.replace();
+    onClickArtist(id: string) {
+        this.router.navigate(['/artist'], {queryParams: {
+            id
+        }});
     }
 }

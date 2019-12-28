@@ -1,59 +1,59 @@
-<div class="side-nav-section">
+<div class="side-nav-section no-select">
 
     <div class="side-nav">
         <ul class="side-nav-options">
-            <li id="logo">
+            <li id="logo" routerLink="">
                 <img src="../../../assets/images/logo.png" class="avatar-brand" alt="">
             </li>
-            <li class="{{menuOptions.profile}}">
+            <li class="{{menuOptions.profile}}" routerLink="/profile">
                 <div class="icon-section">
-                    <a routerLink="/profile" href="javascript:void(0);">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="user"></i>
                             <span class="icon-des">Profile</span>
                         </span>
                     </a>
                 </div>
             </li>
-            <li class="{{menuOptions.playlists}}">
+            <li class="{{menuOptions.playlists}}" routerLink="/playlists">
                 <div class="icon-section">
-                    <a routerLink="/playlists" href="javascript:void(0);">
+                    <a href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="activity"></i>
                             <span class="icon-des">Playlists</span>
                         </span>
                     </a>
                 </div>
             </li>
-            <li class="{{menuOptions.toptracks}}">
+            <li class="{{menuOptions.toptracks}}" routerLink="/toptracks">
                 <div class="icon-section">
-                    <a routerLink="/toptracks" href="javascript:void(0);">
+                    <a href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="music"></i>
                             <span class="icon-des">Top Tracks</span>
                         </span>
                     </a>
                 </div>
             </li>
-            <li class="{{menuOptions.topartists}}">
+            <li class="{{menuOptions.topartists}}" routerLink="/topartists">
                 <div class="icon-section">
-                    <a  routerLink="/topartists" href="javascript:void(0);">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="mic"></i>
                             <span class="icon-des">Top Artists</span>
                         </span>
                     </a>
                 </div>
             </li>
-            <li class="{{menuOptions.recentsongs}}">
+            <li class="{{menuOptions.recentsongs}} " routerLink="/recentsongs">
                 <div class="icon-section">
-                    <a  routerLink="/recentsongs" href="javascript:void(0);">
+                    <a  href="javascript:void(0);">
                         <span class="icon"><i class="icon-size-md" data-feather="globe"></i>
                             <span class="icon-des">Recent Songs</span>
                         </span>
                     </a>
                 </div>
             </li>
-            <li>
+            <li (click) = "onLogout()">
                 <div class="icon-section">
                     <a href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="log-out"></i>
+                        <span class="icon"><i class="icon-size-md"  data-feather="log-out"></i>
                             <span class="icon-des">Log out</span>
                         </span>
                     </a>
@@ -65,57 +65,3 @@
     </div>
 
 </div>
-
-
-<!--<div class="wrapper collapses">
-    <div class="sidemenu-options">
-        <div class="top_navbar">
-            <div class="hamburger">
-                <img src="../../../assets/images/logo.png" class="avatar-brand" alt="">
-            </div>
-        </div>
-    
-        <div class="sidebar">
-            <ul class="menuoptions">
-                <li class="{{menuOptions.profile}}">
-                    <a  href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="user"></i>
-                            <span class="icon-des">Profile</span>
-                        </span>
-                    </a>
-                </li>
-                <li class="{{menuOptions.playlists}}">
-                    <a  href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="activity"></i>
-                            <span class="icon-des">Playlists</span>
-                        </span>
-                    </a></li>
-                <li class="{{menuOptions.toptracks}}">
-                    <a  href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="music"></i>
-                            <span class="icon-des">Top Tracks</span>
-                        </span>
-                    </a>
-                </li>
-                <li class="{{menuOptions.topartists}}">
-                    <a  href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="globe"></i>
-                            <span class="icon-des">Top Artists</span>
-                        </span>
-                    </a>
-                </li>
-                <li><a href="javascript:void(0);">
-                        <span class="icon"><i class="icon-size-md" data-feather="log-out"></i>
-                            <span class="icon-des">Log out</span>
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-        <div id="main-container" class="main_container">
-            <ng-content></ng-content>    
-        </div>
-    </div> -->
