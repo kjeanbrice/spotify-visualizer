@@ -1,21 +1,38 @@
 <app-menu [menuOptions]='menuOptions'></app-menu>
 <div class="playlist-section">
-    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <div class="loading-section {{loadingStatus}}">
+        <div class="lds-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div class="playlist-container">
         <div class="playlist-left">
             <div class="playlist-title-container title-section">
                 <div class="playlist-image-overlay">
-                    <img class="playlist-image-left"
-                        src="{{playlistData.playlistImage}}" />
+                    <a class="playlist-link" href="{{playlistData.externalURL}}">
+                        <div class="item-overlay">
+                            <i class="icon-size-playlist" data-feather="info"></i>
+                        </div>
+                        <img class="playlist-image-left" src="{{playlistData.playlistImage}}" />
+                    </a>
                 </div>
                 <div class="playlist-title-area">
                     <div>{{playlistData.playlistName}}</div>
                     <div class="title-subtitle bg-gray-spotify">By {{playlistData.playlistOwner}}</div>
+                    <div class="title-subtitle bg-gray-spotify">{{playlistData.description}}</div>
                     <div class="title-subtitle bg-white-spotify">{{playlistData.totalTracks}} Track(s)</div>
                 </div>
             </div>
 
-            <div class="top-button" (click)="onClickRecommedations(playlistData.playlistID)">
+            <div class="top-button" (click)="onClickRecommedations(playlistData.playlistID,playlistData.playlistName)">
                 <span>Get Recommedations</span>
             </div>
         </div>
@@ -23,21 +40,22 @@
             <div class="playlist-right-container">
                 <ul>
                     <li *ngFor="let track of playlistTracks">
-                        <a class="playlist-track-container" href="javascript:void(0);" (click)="onClickTrack(track.trackID)">
+                        <a class="playlist-track-container" href="javascript:void(0);"
+                            (click)="onClickTrack(track.trackID)">
                             <div class="playlist-image">
                                 <div class="item-overlay">
                                     <i class="icon-size-link" data-feather="info"></i>
                                 </div>
-                                <img class="playlist-image avatar-brand"
-                                src="{{track.albumImage}}" alt="" />
+                                <img class="playlist-image avatar-brand" src="{{track.albumImage}}" alt="" />
                             </div>
-                            
+
                             <div class="playlist-track-des text-settings vertical-center">
                                 <div class="text-settings">
                                     <span class="bg-white-spotify playlist-title">{{track.trackName}}
                                     </span>
                                     <div class="text-settings bg-gray-spotify">
-                                        <span class="playlist-subtitle">{{track.artists}}&nbsp;&#183;&nbsp;{{track.albumName}}</span>
+                                        <span
+                                            class="playlist-subtitle">{{track.artists}}&nbsp;&#183;&nbsp;{{track.albumName}}</span>
                                     </div>
                                 </div>
                                 <div class="playlist-track-duration bg-gray-spotify">

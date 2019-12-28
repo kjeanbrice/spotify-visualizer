@@ -4,7 +4,7 @@
                 <nav class="navbar fixed-top navbar-expand navbar-dark navbar-transparent navbar-hero">
                         <a class="navbar-left navbar-brandcolor" href="#">
                                 <img src="../../../assets/images/logo.png" class="avatar-brand" alt="">
-                                <span class="brand-title">Spotify Profile</span>
+                                <span class="brand-title">Spotify Visualizer</span>
                         </a>
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -14,16 +14,14 @@
                         </button>
                         <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav ml-auto">
-                                
-
                                         <li class="nav-item dropdown">
                                                         <a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         <img class="avatar"
                                                                         src="./assets/images/herobutton.svg" />
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right menu-text-size" aria-labelledby="navbarDropdownMenuLink">
-                                                          <a class="dropdown-item" href="#"><i class="icon-size-md" data-feather="log-in"></i>&nbsp;&nbsp;Login</a>
-                                                          <a class="dropdown-item" href="#"><i class="icon-size-md" data-feather="help-circle"></i>&nbsp;&nbsp;Need Help?</a>
+                                                          <a (click)="onLogin()" class="dropdown-item" href="javascript:void(0);"><i class="icon-size-md" data-feather="log-in"></i>&nbsp;&nbsp;Login</a>
+                                                          <a class="dropdown-item" href="#"><i class="icon-size-md" href="javascript:void(0);" data-feather="help-circle"></i>&nbsp;&nbsp;Need Help?</a>
                                                         </div>
                                         </li>
 
@@ -41,7 +39,7 @@
                                         Spotify account.
                                         View your top artists, top tracks, recently played tracks and more!</h2>
                                 <div class="hero-login-area">
-                                        <button type="button" class="btn btn-lg dark-green" routerLink="/login"><span
+                                        <button type="button" class="btn btn-lg dark-green" (click)="onLogin()"><span
                                                         class="button-text-size">Login</span></button>
                                 </div>
                         </div>

@@ -408,6 +408,33 @@ export class SpotifyService {
     }
 
 
+    public getRecommendedTracks(opts: any): Observable<any> {
+        if (opts === null || opts === undefined) {
+            opts = {};
+        }
+
+        const token = this.getAccessToken();
+        const options = {
+            headers: new HttpHeaders({
+                Authorization: 'Bearer ' + token
+            }),
+            params: opts
+        };
+
+        const addr = 'https://api.spotify.com/v1/recommendations';
+
+        const results = this.http.get(addr, options).pipe(
+            map((res) => {
+                return res;
+            }),
+            catchError((err) => {
+                return this.errorHandler(err);
+            })
+        );
+
+        return results;
+    }
+
 
     public isFollowingArtistsOrUsers(ids: string[], type: string): Observable<any> {
         const token = this.getAccessToken();
@@ -434,6 +461,33 @@ export class SpotifyService {
         );
 
         return results;
+    }
+
+    public getSeedTracks(tracks: any[], limit: number): string[] {
+        const a = [];
+
+        // tslint:disable-next-line:prefer-for-of
+        for (let i = 0; i < tracks.length; i++) {
+            a.push(i);
+        }
+
+        const results = [];
+        let totalTracks = tracks.length;
+
+        while (totalTracks > 0 && results.length < limit) {
+            const pos = Math.floor(Math.random() * totalTracks);
+            results.push(tracks[a[pos]].trackID);
+            this.swap(pos, totalTracks - 1, a);
+            totalTracks--;
+        }
+
+        return results;
+    }
+
+    public swap(i: number, j: number, data: any[]) {
+        const temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 
 

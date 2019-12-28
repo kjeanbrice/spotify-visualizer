@@ -1,5 +1,5 @@
 import {Component, OnInit, AfterViewInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import * as Feather from 'feather-icons';
 import {SpotifyService} from '../../core/services/spotify/spotify.service';
 
@@ -9,18 +9,16 @@ import {SpotifyService} from '../../core/services/spotify/spotify.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-    constructor(private route: ActivatedRoute, private spotifyService: SpotifyService) {
+    constructor(private route: ActivatedRoute, private router: Router , private spotifyService: SpotifyService) {
     }
 
     ngOnInit(): void {
         const token = this.route.snapshot.queryParamMap.get('access_token');
         this.spotifyService.authenticate(token).subscribe(
             (data) => {
-                console.log('Success:Redirect');
-                console.log(JSON.stringify(data));
+                this.router.navigate(['/profile']);
             },
             (err) => {
-                console.log('err:' + JSON.stringify(err));
             }
         );
     }
@@ -29,5 +27,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         Feather.replace();
+    }
+
+    onLogin() {
+        window.location.href = window.location.href.includes('localhost') ?
+        'http://localhost:8888/login' : 'https://spotifyvisualizer.herokuapp.com/login';
     }
 }

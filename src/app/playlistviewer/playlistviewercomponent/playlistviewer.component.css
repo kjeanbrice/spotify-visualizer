@@ -143,7 +143,7 @@ a:hover{
 
 .title-section{
     font-size:1.9rem;
-    font-weight:600;   
+    font-weight:700;   
 }
 
 .title-subtitle{
@@ -151,9 +151,22 @@ a:hover{
     font-weight: 600
 }
 
+.playlist-image-overlay{
+    position:relative;
+}
+
+
+
+.playlist-title-area > div{
+    margin-top:3%;
+}
+.playlist-title-area > div:first-child{
+    margin-top:1%;
+}
+
 .playlist-title-container > div:last-child{
-    margin-top:5%;
-    margin-bottom:5%
+    margin-top:6%;
+    margin-bottom:6%
 }
 
 .playlist-title-area > div:last-child{

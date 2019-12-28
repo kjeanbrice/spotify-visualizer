@@ -1,8 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {TopTracksComponent} from './toptrackscomponent/toptracks.component';
+import {AuthGuard} from '../core/guards/auth.guard';
+
 const routes: Routes = [
-    {path: 'toptracks', component: TopTracksComponent}
+    {path: 'toptracks', component: TopTracksComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

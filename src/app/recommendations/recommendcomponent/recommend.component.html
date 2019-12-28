@@ -1,1 +1,37 @@
-<app-menu [menuOptions]="menuOptions"></app-menu>
+<app-menu [menuOptions]='menuOptions'></app-menu>
+<div class="recentsongs-section">
+    <div class="loading-section {{loadingStatus}}"><div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <div class="title-section">
+        <span>Recommended Tracks Based On {{playlistData.playlistName}}</span>
+    </div>
+    <div>
+        <ul class="playlist-songs-section">
+            <!--grid column-->
+            <li *ngFor="let track of recommendedTracks">
+                <a class="playlist-song" (click)="onClickTrack(track.trackID)" href="javscript:(void);">
+                    <span class="playlist-image">
+                        <div class="item-overlay">
+                            <i class="icon-size-link" data-feather="info"></i>
+                        </div>
+                        <img src="{{track.albumImage}}"
+                            class="avatar-brand" alt="">
+                    </span>
+                    <div class="playlist-data">
+                        <div class="playlist-data-des">
+                            <span class="bg-white-spotify playlist-title">{{track.trackName}}</span>
+                            
+                            <div class="playlist-des-wrapper bg-gray-spotify"><span class="playlist-des">{{track.artists}}&nbsp;&#183;&nbsp;{{track.albumName}}</span>
+                            </div>
+                        </div>
+                        <span class="bg-gray-spotify duration">{{track.duration}}</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+
+            </li>
+                
+
+        </ul>
+    </div>
+</div>

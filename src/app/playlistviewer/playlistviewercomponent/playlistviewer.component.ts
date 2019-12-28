@@ -45,6 +45,8 @@ export class PlaylistViewerComponent implements AfterViewInit, OnInit, AfterView
             (res) => {
                 this.playlistData = {
                     playlistID: res.id,
+                    description: res.description,
+                    externalURL: res.external_urls.spotify,
                     playlistImage: res.images[0].url,
                     playlistName: res.name,
                     totalTracks: res.tracks.total,
@@ -94,8 +96,13 @@ export class PlaylistViewerComponent implements AfterViewInit, OnInit, AfterView
 
     }
 
-    onClickRecommedations(playlistid: string) {
-        console.log('Hello from onClickRecommedations');
+    onClickRecommedations(playlistid: string, playlistName: string) {
+        this.router.navigate(['/recommended'], {
+            queryParams: {
+                name: playlistName,
+                id: playlistid
+        }
+    });
     }
     ngAfterViewInit() {
         Feather.replace();

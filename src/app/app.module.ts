@@ -26,7 +26,6 @@ import {RecommendModule} from './recommendations/recommend.module';
     CoreModule,
     TopTracksModule,
     AppRoutingModule,
-    HomeModule,
     HttpClientModule,
     MenuModule,
     ProfileModule,
@@ -36,7 +35,8 @@ import {RecommendModule} from './recommendations/recommend.module';
     TrackModule,
     TopArtistsModule,
     ArtistModule,
-    RecommendModule
+    RecommendModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
