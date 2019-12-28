@@ -18,12 +18,7 @@ export class TopTracksComponent implements AfterViewInit, OnInit, AfterViewCheck
         recentsongs: ''
     };
 
-    searchOptions: object = {
-        longterm: 'active',
-        mediumterm: '',
-        shortterm: ''
-    };
-
+    searchOptions: object;
     currentSearchFilter: string;
     loadingStatus: string;
     map: Map<string, number>;
@@ -35,6 +30,12 @@ export class TopTracksComponent implements AfterViewInit, OnInit, AfterViewCheck
         this.loadingStatus = '';
         this.map = new Map();
         this.map.set('getTopTracks', 0);
+
+        this.searchOptions = {
+            longterm: 'active',
+            mediumterm: '',
+            shortterm: ''
+        };
     }
     ngOnInit() {
         this.getTopTracks(null, {limit: 30, time_range: this.currentSearchFilter}, 'tracks', []);
