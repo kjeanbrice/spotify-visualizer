@@ -1,3 +1,3 @@
-# Spotify Visualizer
+## Spotify Visualizer
 
 Needs Updating
