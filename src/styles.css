@@ -200,7 +200,6 @@ html{
 body {
     margin: 0;
     font-family: "CircularStd","Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
@@ -213,24 +212,50 @@ body {
     content:none !important;
 }
 
-
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 2560px){
+  html{
+    font-size: 18px !important;
+  } 
 
 }
 
+@media only screen and (max-width: 2100px){
+  html{
+    font-size: 17px !important;
+  } 
 
+}
+
+@media only screen and (max-width: 1800px){
+  html{
+    font-size: 16px !important;
+  }
+
+}
+
+@media only screen and (max-width: 1440px){
+  html{
+      font-size: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  html{
+    font-size: 14px !important;
+  } 
+}
 
 
 @media only screen and (max-width: 992px) { 
   html{
-    font-size:15px;
+    font-size:13px !important;
   }
 }
 
 /*-----responsive-----*/
 @media only screen and (max-width: 768px){
   html{
-    font-size:14.5px;
+    font-size:12.5px !important;
   }
 
 
