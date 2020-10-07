@@ -147,7 +147,6 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
                     };
                     this.topArtistsData.push(artist);
                 }
-                console.log(res.items);
             },
             (err) => {
                 console.log('Profile: Unable to load top artist');
