@@ -106,7 +106,8 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
 
 
     getTopTracks() {
-        this.spotifyService.getTopAnalytics(null, {limit: 10}, 'tracks').subscribe(
+        this.spotifyService.getTopAnalytics(null, {limit: 10,
+            time_range: 'long_term'}, 'tracks').subscribe(
             (res) => {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
@@ -133,7 +134,8 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
 
 
     getTopArtists() {
-        this.spotifyService.getTopAnalytics(null, {limit: 10}, 'artists').subscribe(
+        this.spotifyService.getTopAnalytics(null, {limit: 10,
+        time_range: 'long_term'}, 'artists').subscribe(
             (res) => {
                 const item = res.items;
                 // tslint:disable-next-line:prefer-for-of
@@ -145,6 +147,7 @@ export class ProfileComponent implements OnInit, AfterViewInit, AfterViewChecked
                     };
                     this.topArtistsData.push(artist);
                 }
+                console.log(res.items);
             },
             (err) => {
                 console.log('Profile: Unable to load top artist');
