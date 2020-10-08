@@ -26,7 +26,7 @@ export class TopArtistsComponent implements OnInit, AfterViewChecked {
     }
 
     ngOnInit() {
-        this.getTopArtists(null, null, 'artists', []);
+        this.getTopArtists(null, {limit: 25, time_range: 'long_term'}, 'artists', []);
     }
 
     ngAfterViewChecked() {
@@ -46,6 +46,7 @@ export class TopArtistsComponent implements OnInit, AfterViewChecked {
                     };
                     results.push(artist);
                 }
+
 
                 if (res.next === null) {
                     this.topArtistsData = results;
