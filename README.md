@@ -35,18 +35,22 @@ A web application that provides users with personalized Spotify data, allowing t
      SPOTIFY_CLIENT_SECRET=your_client_secret  
      REDIRECT_URI=http://localhost:3000/callback  
      ```  
-
-4. Start the frontend server:  
+4. Build the project:  
+   ```bash  
+   ng build 
+   ```
+   
+5. Start the frontend server:  
    ```bash  
    ng start  
    ```
 
-4. Start the backend server:  
+6. Start the backend server:  
    ```bash  
-   ng backend  
+   ng server  
    ``` 
 
-5. Open the application in your browser:  
+7. Open the application in your browser:  
    ```
    http://localhost:4200  
    ```  
