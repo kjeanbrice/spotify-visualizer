@@ -36,10 +36,15 @@ A web application that provides users with personalized Spotify data, allowing t
      REDIRECT_URI=http://localhost:3000/callback  
      ```  
 
-4. Start the development server:  
+4. Start the frontend server:  
    ```bash  
-   npm start  
-   ```  
+   ng start  
+   ```
+
+4. Start the backend server:  
+   ```bash  
+   ng backend  
+   ``` 
 
 5. Open the application in your browser:  
    ```
